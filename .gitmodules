@@ -1,0 +1,3 @@
+[submodule "qBiqClientAPI"]
+	path = qBiqClientAPI
+	url = https://github.com/ubiqweus/qBiqClientAPI.git
