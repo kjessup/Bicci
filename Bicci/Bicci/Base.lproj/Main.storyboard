@@ -1,50 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.14" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h23-0f-NM7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tXr-a1-R10">
+        <!--Opening View Controller-->
+        <scene sceneID="mNz-Ly-L9K">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="Bicci" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="oPg-23-Lqe">
+                <viewController id="h23-0f-NM7" customClass="OpeningViewController" customModule="Bicci" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hyQ-pu-FV8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y38-nN-Cjb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </arscnView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPi-cn-N51">
-                                <rect key="frame" x="166.5" y="588" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bicci Launch Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJW-ci-qKY">
+                                <rect key="frame" x="109.5" y="333" width="156" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="OjN-DO-ruA" firstAttribute="trailing" secondItem="y38-nN-Cjb" secondAttribute="trailing" id="HD1-2X-R9M"/>
-                            <constraint firstItem="OjN-DO-ruA" firstAttribute="bottom" secondItem="qPi-cn-N51" secondAttribute="bottom" constant="58" id="MAA-aQ-p2m"/>
-                            <constraint firstItem="y38-nN-Cjb" firstAttribute="leading" secondItem="OjN-DO-ruA" secondAttribute="leading" id="O3m-eH-b4J"/>
-                            <constraint firstItem="OjN-DO-ruA" firstAttribute="bottom" secondItem="y38-nN-Cjb" secondAttribute="bottom" id="PWo-Mr-TrN"/>
-                            <constraint firstItem="OjN-DO-ruA" firstAttribute="top" secondItem="y38-nN-Cjb" secondAttribute="top" constant="20" id="aVU-ym-Fzq"/>
-                            <constraint firstItem="qPi-cn-N51" firstAttribute="centerX" secondItem="OjN-DO-ruA" secondAttribute="centerX" id="ujC-lR-5w5"/>
+                            <constraint firstItem="hJW-ci-qKY" firstAttribute="centerX" secondItem="JEw-e5-huJ" secondAttribute="centerX" id="Yje-oV-C16"/>
+                            <constraint firstItem="hJW-ci-qKY" firstAttribute="centerY" secondItem="JEw-e5-huJ" secondAttribute="centerY" id="rrJ-6U-apU"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="OjN-DO-ruA"/>
+                        <viewLayoutGuide key="safeArea" id="JEw-e5-huJ"/>
                     </view>
                     <connections>
-                        <outlet property="label" destination="qPi-cn-N51" id="tx2-ll-123"/>
-                        <outlet property="sceneView" destination="y38-nN-Cjb" id="HGB-eJ-ZvL"/>
+                        <segue destination="pKN-jJ-SZp" kind="show" identifier="biqs" id="aKF-3y-2hg"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fWh-6m-i5h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+            <point key="canvasLocation" x="-878" y="133"/>
+        </scene>
+        <!--biqs-->
+        <scene sceneID="8K0-1t-yTt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Biqs" referencedIdentifier="biqs" id="pKN-jJ-SZp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bM6-AX-CFc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-244" y="16"/>
         </scene>
     </scenes>
 </document>

@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F803EA6520F560CA00738F73 /* SAuthCodables.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F803EA6420F560CA00738F73 /* SAuthCodables.framework */; };
+		F803EA6620F560CA00738F73 /* SAuthCodables.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F803EA6420F560CA00738F73 /* SAuthCodables.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F803EA6920F560CD00738F73 /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F803EA6820F560CD00738F73 /* OAuthSwift.framework */; };
+		F803EA6A20F560CD00738F73 /* OAuthSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F803EA6820F560CD00738F73 /* OAuthSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F803EA6C20F560D100738F73 /* SwiftCodables.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F803EA6B20F560D100738F73 /* SwiftCodables.framework */; };
+		F803EA6D20F560D100738F73 /* SwiftCodables.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F803EA6B20F560D100738F73 /* SwiftCodables.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F803EA6F20F560D400738F73 /* qBiqClientAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F803EA6E20F560D400738F73 /* qBiqClientAPI.framework */; };
+		F803EA7020F560D400738F73 /* qBiqClientAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F803EA6E20F560D400738F73 /* qBiqClientAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F803EA7220F5677700738F73 /* OpeningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F803EA7120F5677700738F73 /* OpeningViewController.swift */; };
+		F803EA7420F567AB00738F73 /* Biqs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F803EA7320F567AB00738F73 /* Biqs.storyboard */; };
+		F803EA7620F5688900738F73 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F803EA7520F5688800738F73 /* LoginViewController.swift */; };
+		F803EA7820F568D700738F73 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F803EA7720F568D700738F73 /* CreateAccountViewController.swift */; };
+		F803EA7A20F568E700738F73 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F803EA7920F568E700738F73 /* Login.storyboard */; };
 		F80BD8E820F2DA5F00150B6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F80BD8E720F2DA5F00150B6B /* Assets.xcassets */; };
 		F8D22CE420E71AEC00249B01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D22CE320E71AEC00249B01 /* AppDelegate.swift */; };
 		F8D22CE620E71AEC00249B01 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F8D22CE520E71AEC00249B01 /* art.scnassets */; };
@@ -15,7 +28,33 @@
 		F8D22CF020E71AF000249B01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D22CEE20E71AF000249B01 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F803EA6720F560CA00738F73 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F803EA6D20F560D100738F73 /* SwiftCodables.framework in Embed Frameworks */,
+				F803EA7020F560D400738F73 /* qBiqClientAPI.framework in Embed Frameworks */,
+				F803EA6A20F560CD00738F73 /* OAuthSwift.framework in Embed Frameworks */,
+				F803EA6620F560CA00738F73 /* SAuthCodables.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		F803EA6420F560CA00738F73 /* SAuthCodables.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAuthCodables.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F803EA6820F560CD00738F73 /* OAuthSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OAuthSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F803EA6B20F560D100738F73 /* SwiftCodables.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftCodables.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F803EA6E20F560D400738F73 /* qBiqClientAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = qBiqClientAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F803EA7120F5677700738F73 /* OpeningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningViewController.swift; sourceTree = "<group>"; };
+		F803EA7320F567AB00738F73 /* Biqs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Biqs.storyboard; sourceTree = "<group>"; };
+		F803EA7520F5688800738F73 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F803EA7720F568D700738F73 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		F803EA7920F568E700738F73 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		F80BD8E720F2DA5F00150B6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
 		F8D22CE020E71AEC00249B01 /* Bicci.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bicci.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D22CE320E71AEC00249B01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +70,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F803EA6C20F560D100738F73 /* SwiftCodables.framework in Frameworks */,
+				F803EA6F20F560D400738F73 /* qBiqClientAPI.framework in Frameworks */,
+				F803EA6920F560CD00738F73 /* OAuthSwift.framework in Frameworks */,
+				F803EA6520F560CA00738F73 /* SAuthCodables.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +85,10 @@
 			children = (
 				F8D22CE220E71AEC00249B01 /* Bicci */,
 				F8D22CE120E71AEC00249B01 /* Products */,
+				F803EA6E20F560D400738F73 /* qBiqClientAPI.framework */,
+				F803EA6B20F560D100738F73 /* SwiftCodables.framework */,
+				F803EA6820F560CD00738F73 /* OAuthSwift.framework */,
+				F803EA6420F560CA00738F73 /* SAuthCodables.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,11 +105,16 @@
 			children = (
 				F8D22CE320E71AEC00249B01 /* AppDelegate.swift */,
 				F8D22CE720E71AEC00249B01 /* ViewController.swift */,
+				F803EA7120F5677700738F73 /* OpeningViewController.swift */,
 				F8D22CE520E71AEC00249B01 /* art.scnassets */,
-				F8D22CE920E71AEC00249B01 /* Main.storyboard */,
 				F80BD8E720F2DA5F00150B6B /* Assets.xcassets */,
+				F8D22CE920E71AEC00249B01 /* Main.storyboard */,
 				F8D22CEE20E71AF000249B01 /* LaunchScreen.storyboard */,
+				F803EA7320F567AB00738F73 /* Biqs.storyboard */,
 				F8D22CF120E71AF000249B01 /* Info.plist */,
+				F803EA7520F5688800738F73 /* LoginViewController.swift */,
+				F803EA7720F568D700738F73 /* CreateAccountViewController.swift */,
+				F803EA7920F568E700738F73 /* Login.storyboard */,
 			);
 			path = Bicci;
 			sourceTree = "<group>";
@@ -77,6 +129,7 @@
 				F8D22CDC20E71AEC00249B01 /* Sources */,
 				F8D22CDD20E71AEC00249B01 /* Frameworks */,
 				F8D22CDE20E71AEC00249B01 /* Resources */,
+				F803EA6720F560CA00738F73 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,7 +178,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F803EA7420F567AB00738F73 /* Biqs.storyboard in Resources */,
 				F8D22CE620E71AEC00249B01 /* art.scnassets in Resources */,
+				F803EA7A20F568E700738F73 /* Login.storyboard in Resources */,
 				F8D22CF020E71AF000249B01 /* LaunchScreen.storyboard in Resources */,
 				F80BD8E820F2DA5F00150B6B /* Assets.xcassets in Resources */,
 				F8D22CEB20E71AEC00249B01 /* Main.storyboard in Resources */,
@@ -139,7 +194,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F803EA7820F568D700738F73 /* CreateAccountViewController.swift in Sources */,
+				F803EA7620F5688900738F73 /* LoginViewController.swift in Sources */,
 				F8D22CE820E71AEC00249B01 /* ViewController.swift in Sources */,
+				F803EA7220F5677700738F73 /* OpeningViewController.swift in Sources */,
 				F8D22CE420E71AEC00249B01 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

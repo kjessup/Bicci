@@ -4,4 +4,7 @@
    <FileRef
       location = "group:Bicci/Bicci.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:qBiqClientAPI/qBiqClientAPI.xcodeproj">
+   </FileRef>
 </Workspace>

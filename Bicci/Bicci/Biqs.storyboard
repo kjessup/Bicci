@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r7H-3M-DUK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="FDF-q9-uBJ">
+            <objects>
+                <viewController storyboardIdentifier="biqs" id="r7H-3M-DUK" customClass="ViewController" customModule="Bicci" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4S1-Yh-bNQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMC-XX-YuB">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </arscnView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BuZ-Pl-sQy">
+                                <rect key="frame" x="166.5" y="588" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="dGw-6S-erP" firstAttribute="trailing" secondItem="iMC-XX-YuB" secondAttribute="trailing" id="5Dx-2d-sS0"/>
+                            <constraint firstItem="iMC-XX-YuB" firstAttribute="leading" secondItem="dGw-6S-erP" secondAttribute="leading" id="F4D-zi-5S5"/>
+                            <constraint firstItem="dGw-6S-erP" firstAttribute="bottom" secondItem="iMC-XX-YuB" secondAttribute="bottom" id="RQb-Oi-oBq"/>
+                            <constraint firstItem="dGw-6S-erP" firstAttribute="top" secondItem="iMC-XX-YuB" secondAttribute="top" constant="20" id="Spk-ef-YbT"/>
+                            <constraint firstItem="BuZ-Pl-sQy" firstAttribute="centerX" secondItem="dGw-6S-erP" secondAttribute="centerX" id="ga2-OK-49x"/>
+                            <constraint firstItem="dGw-6S-erP" firstAttribute="bottom" secondItem="BuZ-Pl-sQy" secondAttribute="bottom" constant="58" id="zCm-vO-nWx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dGw-6S-erP"/>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="BuZ-Pl-sQy" id="DoP-RL-iQm"/>
+                        <outlet property="sceneView" destination="iMC-XX-YuB" id="S1M-qe-ngy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uen-d5-4tY" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1471" y="133"/>
+        </scene>
+    </scenes>
+</document>

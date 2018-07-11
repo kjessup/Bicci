@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import qBiqClientAPI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+	static let authentication = Authentication()
 	var window: UIWindow?
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

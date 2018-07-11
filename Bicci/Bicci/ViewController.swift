@@ -44,38 +44,32 @@ func boxWidth(_ box: BoundingBox, scale: Float) -> Float {
 	return (box.max.x - box.min.x) * scale
 }
 
-class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
-
-    @IBOutlet var sceneView: ARSCNView!
-	@IBOutlet var label: UILabel!
-	
-	private var requests: [VNRequest] = []
-	let fadeDuration: TimeInterval = 5.0
-	let rotateDuration: TimeInterval = 3
-	let waitDuration: TimeInterval = 0.5
-	var qrDetectMode = QRDetectMode.none
-	var session: ARSession { return sceneView.session }
-	var processing = 0
-	
-	var foundBiqs = [String:SCNNode]()
-	
-	lazy var fadeAndSpinAction: SCNAction = {
-		return .sequence([
-			.fadeIn(duration: fadeDuration),
-			.rotateBy(x: 0, y: 0, z: CGFloat.pi * 360 / 180, duration: rotateDuration),
-			.wait(duration: waitDuration),
-//			.fadeOut(duration: fadeDuration)
-			])
-	}()
-	
-	func addName(_ name: String, to parent: SCNNode, avatarDepth: Float) {
+enum AvatarNode: String {
+	case dog, cat, fox, bunny, elephant, frog
+	static let allCases: [AvatarNode] = [.dog, .cat, .fox, .bunny, .elephant, .frog]
+	func node(id: String) -> SCNNode {
+		let name = self.rawValue
+		let parent = SCNNode()
+		if let scene = SCNScene(named: "art.scnassets/\(name).scn"),
+			let node = scene.rootNode.childNode(withName: name, recursively: false) {
+			let scale = Float(0.0007)
+			node.scale = SCNVector3(x: scale, y: scale, z: scale)
+			addName(id, to: parent, avatarDepth: boxDepth(node.boundingBox, scale: node.scale.x))
+			parent.addChildNode(node)
+		}
+		return parent
+	}
+	init() {
+		let rnd = Int(arc4random_uniform(UInt32(AvatarNode.allCases.count-1)))
+		self = AvatarNode.allCases[rnd]
+	}
+	private func addName(_ name: String, to parent: SCNNode, avatarDepth: Float) {
 		let text = SCNText(string: name.split(separator: "-").last!, extrusionDepth: 0.5)
-		text.font = UIFont(name: "Monaco", size: 12)
+		text.font = UIFont.systemFont(ofSize: 12)
 		text.firstMaterial?.diffuse.contents = UIColor.orange
 		text.firstMaterial?.specular.contents = UIColor.orange
 		let textNode = SCNNode(geometry: text)
 		parent.addChildNode(textNode)
-		
 		let scale = Float(0.001)
 		textNode.scale = SCNVector3(scale, scale, scale)
 		let box = textNode.boundingBox
@@ -84,39 +78,27 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
 		textNode.runAction(SCNAction.sequence([
 			.rotateBy(x: CGFloat(.pi * -0.5), y: 0, z: 0, duration: 0.0),
 			.moveBy(x: -CGFloat(width / 2), y: 0, z: CGFloat(depth), duration: 0.0)
-		]))
+			]))
 	}
+}
+
+class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
+
+    @IBOutlet var sceneView: ARSCNView!
+	@IBOutlet var label: UILabel!
 	
-	func ladyBugNode(id: String) -> SCNNode {
-		let parent = SCNNode()
-		if let scene = SCNScene(named: "art.scnassets/ladybird.scn"),
-			let node = scene.rootNode.childNode(withName: "ladybird", recursively: false) {
-			let scale = Float(0.00005)
-			node.scale = SCNVector3(x: scale, y: scale, z: scale)
-			addName(id, to: parent, avatarDepth: boxDepth(node.boundingBox, scale: scale))
-			parent.addChildNode(node)
-			
-		}
-		return parent
-	}
-	
-	func antNode(id: String) -> SCNNode {
-		let parent = SCNNode()
-		if let scene = SCNScene(named: "art.scnassets/ant1.scn"),
-				let node = scene.rootNode.childNode(withName: "ant1", recursively: false) {
-			addName(id, to: parent, avatarDepth: boxDepth(node.boundingBox, scale: node.scale.x))
-			parent.addChildNode(node)
-		}
-		return parent
-	}
+	private var requests: [VNRequest] = []
+	let fadeDuration: TimeInterval = 2.5
+	let rotateDuration: TimeInterval = 3
+	let waitDuration: TimeInterval = 0.5
+	var qrDetectMode = QRDetectMode.none
+	var session: ARSession { return sceneView.session }
+	var processing = 0
+	var foundBiqs = [String:SCNNode]()
 	
 	func getNode(id: String) -> SCNNode {
-		let node: SCNNode
-		if case .none = self.qrDetectMode {
-			node = antNode(id: id)
-		} else {
-			node = self.ladyBugNode(id: id)
-		}
+		let nodeType = AvatarNode()
+		let node = nodeType.node(id: id)
 		node.opacity = 0.0
 		node.runAction(.fadeIn(duration: fadeDuration))
 		return node
@@ -230,12 +212,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
 						node = n
 					} else {
 //						print("Adding anchor for biq \(biqId)")
-						if case .none = self.qrDetectMode {
-							node = self.antNode(id: biqId)
-						} else {
-							node = self.ladyBugNode(id: biqId)
-						}
+						node = self.getNode(id: biqId)
 						node.transform = .init(transform)
+						let c = SCNBillboardConstraint()
+						c.freeAxes = SCNBillboardAxis.Y
+						node.constraints = [c]
+						
 						self.foundBiqs[biqId] = node
 						self.qrDetectMode.advance()
 						self.sceneView.scene.rootNode.addChildNode(node)
