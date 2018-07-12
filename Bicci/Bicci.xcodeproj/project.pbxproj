@@ -20,6 +20,10 @@
 		F803EA7620F5688900738F73 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F803EA7520F5688800738F73 /* LoginViewController.swift */; };
 		F803EA7820F568D700738F73 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F803EA7720F568D700738F73 /* CreateAccountViewController.swift */; };
 		F803EA7A20F568E700738F73 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F803EA7920F568E700738F73 /* Login.storyboard */; };
+		F803EA7C20F6742F00738F73 /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F803EA7B20F6742F00738F73 /* UIViewController+alert.swift */; };
+		F803EA7E20F68E1F00738F73 /* BiqsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F803EA7D20F68E1F00738F73 /* BiqsViewController.swift */; };
+		F803EA8020F68FEA00738F73 /* BiqCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F803EA7F20F68FEA00738F73 /* BiqCollectionViewCell.xib */; };
+		F803EA8220F690B700738F73 /* BiqCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F803EA8120F690B700738F73 /* BiqCollectionViewCell.swift */; };
 		F80BD8E820F2DA5F00150B6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F80BD8E720F2DA5F00150B6B /* Assets.xcassets */; };
 		F8D22CE420E71AEC00249B01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D22CE320E71AEC00249B01 /* AppDelegate.swift */; };
 		F8D22CE620E71AEC00249B01 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F8D22CE520E71AEC00249B01 /* art.scnassets */; };
@@ -55,6 +59,10 @@
 		F803EA7520F5688800738F73 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F803EA7720F568D700738F73 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		F803EA7920F568E700738F73 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		F803EA7B20F6742F00738F73 /* UIViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
+		F803EA7D20F68E1F00738F73 /* BiqsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiqsViewController.swift; sourceTree = "<group>"; };
+		F803EA7F20F68FEA00738F73 /* BiqCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BiqCollectionViewCell.xib; sourceTree = "<group>"; };
+		F803EA8120F690B700738F73 /* BiqCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiqCollectionViewCell.swift; sourceTree = "<group>"; };
 		F80BD8E720F2DA5F00150B6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
 		F8D22CE020E71AEC00249B01 /* Bicci.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bicci.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D22CE320E71AEC00249B01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,15 +114,19 @@
 				F8D22CE320E71AEC00249B01 /* AppDelegate.swift */,
 				F8D22CE720E71AEC00249B01 /* ViewController.swift */,
 				F803EA7120F5677700738F73 /* OpeningViewController.swift */,
-				F8D22CE520E71AEC00249B01 /* art.scnassets */,
-				F80BD8E720F2DA5F00150B6B /* Assets.xcassets */,
+				F803EA7520F5688800738F73 /* LoginViewController.swift */,
+				F803EA7720F568D700738F73 /* CreateAccountViewController.swift */,
+				F803EA7B20F6742F00738F73 /* UIViewController+alert.swift */,
+				F803EA7D20F68E1F00738F73 /* BiqsViewController.swift */,
+				F803EA8120F690B700738F73 /* BiqCollectionViewCell.swift */,
 				F8D22CE920E71AEC00249B01 /* Main.storyboard */,
 				F8D22CEE20E71AF000249B01 /* LaunchScreen.storyboard */,
 				F803EA7320F567AB00738F73 /* Biqs.storyboard */,
-				F8D22CF120E71AF000249B01 /* Info.plist */,
-				F803EA7520F5688800738F73 /* LoginViewController.swift */,
-				F803EA7720F568D700738F73 /* CreateAccountViewController.swift */,
 				F803EA7920F568E700738F73 /* Login.storyboard */,
+				F8D22CE520E71AEC00249B01 /* art.scnassets */,
+				F80BD8E720F2DA5F00150B6B /* Assets.xcassets */,
+				F8D22CF120E71AF000249B01 /* Info.plist */,
+				F803EA7F20F68FEA00738F73 /* BiqCollectionViewCell.xib */,
 			);
 			path = Bicci;
 			sourceTree = "<group>";
@@ -183,6 +195,7 @@
 				F803EA7A20F568E700738F73 /* Login.storyboard in Resources */,
 				F8D22CF020E71AF000249B01 /* LaunchScreen.storyboard in Resources */,
 				F80BD8E820F2DA5F00150B6B /* Assets.xcassets in Resources */,
+				F803EA8020F68FEA00738F73 /* BiqCollectionViewCell.xib in Resources */,
 				F8D22CEB20E71AEC00249B01 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,9 +208,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F803EA7820F568D700738F73 /* CreateAccountViewController.swift in Sources */,
+				F803EA8220F690B700738F73 /* BiqCollectionViewCell.swift in Sources */,
 				F803EA7620F5688900738F73 /* LoginViewController.swift in Sources */,
 				F8D22CE820E71AEC00249B01 /* ViewController.swift in Sources */,
+				F803EA7C20F6742F00738F73 /* UIViewController+alert.swift in Sources */,
 				F803EA7220F5677700738F73 /* OpeningViewController.swift in Sources */,
+				F803EA7E20F68E1F00738F73 /* BiqsViewController.swift in Sources */,
 				F8D22CE420E71AEC00249B01 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

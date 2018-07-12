@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import qBiqClientAPI
+import SwiftCodables
 
 class OpeningViewController: UIViewController {
 
@@ -15,9 +17,35 @@ class OpeningViewController: UIViewController {
     }
 	
 	override func viewDidAppear(_ animated: Bool) {
-		self.performSegue(withIdentifier: "biqs", sender: self)
+		Authentication.shared?.checkLoggedIn {
+			response in
+			guard let r = try? response.get(), r, let user = Authentication.shared?.user else {
+				return self.main { self.performSegue(withIdentifier: "login", sender: self) }
+			}
+			DeviceAPI.listDevices(user: user) {
+				response in
+				do {
+					let devices: [DeviceItem] = try response.get()
+					let device: BiqDevice
+					let lastObservation: ObsDatabase.BiqObservation?
+					let shareCount: Int?
+					let limits: [DeviceLimit]?
+					
+					
+					
+					
+				} catch {
+					self.alert(error)
+				}
+			}
+			self.main { self.performSegue(withIdentifier: "biqs", sender: self) }
+		}
 	}
 
+	@IBAction func unwindToOpening(segue: UIStoryboardSegue) {
+		
+	}
+	
     /*
     // MARK: - Navigation
 

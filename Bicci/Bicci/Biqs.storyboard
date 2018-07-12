@@ -9,6 +9,67 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Biqs View Controller-->
+        <scene sceneID="85r-gB-cHM">
+            <objects>
+                <viewController id="vJo-3y-NQI" customClass="BiqsViewController" customModule="Bicci" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ojL-SH-gfD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Tq-X7-hRf">
+                                <rect key="frame" x="16" y="70" width="343" height="527"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bbk-l8-sR1">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eo5-ES-S0t">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="vJo-3y-NQI" id="zq1-NC-fwk"/>
+                                    <outlet property="delegate" destination="vJo-3y-NQI" id="8kD-st-GBO"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5GF-ne-EvU">
+                                <rect key="frame" x="141.5" y="607" width="92" height="30"/>
+                                <state key="normal" title="To The Table!"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Biqs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34A-Ut-cKZ">
+                                <rect key="frame" x="127" y="20" width="121" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="34A-Ut-cKZ" firstAttribute="top" secondItem="V3C-iP-HN2" secondAttribute="top" id="0fL-OL-nP4"/>
+                            <constraint firstItem="9Tq-X7-hRf" firstAttribute="top" secondItem="V3C-iP-HN2" secondAttribute="top" constant="50" id="4B7-FR-Wd4"/>
+                            <constraint firstItem="5GF-ne-EvU" firstAttribute="top" secondItem="9Tq-X7-hRf" secondAttribute="bottom" constant="10" id="4g2-bC-px6"/>
+                            <constraint firstItem="9Tq-X7-hRf" firstAttribute="leading" secondItem="V3C-iP-HN2" secondAttribute="leading" constant="16" id="73v-Ln-aSk"/>
+                            <constraint firstItem="V3C-iP-HN2" firstAttribute="bottom" secondItem="9Tq-X7-hRf" secondAttribute="bottom" constant="70" id="9cr-N4-dzI"/>
+                            <constraint firstItem="5GF-ne-EvU" firstAttribute="centerX" secondItem="V3C-iP-HN2" secondAttribute="centerX" id="ZxG-by-XNZ"/>
+                            <constraint firstItem="V3C-iP-HN2" firstAttribute="trailing" secondItem="9Tq-X7-hRf" secondAttribute="trailing" constant="16" id="swA-9Y-yXQ"/>
+                            <constraint firstItem="34A-Ut-cKZ" firstAttribute="centerX" secondItem="V3C-iP-HN2" secondAttribute="centerX" id="uyL-Yg-wrg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="V3C-iP-HN2"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="exM-a6-pue" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-100" y="-3.1484257871064472"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="FDF-q9-uBJ">
             <objects>

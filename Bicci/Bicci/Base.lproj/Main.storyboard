@@ -33,6 +33,7 @@
                     </view>
                     <connections>
                         <segue destination="pKN-jJ-SZp" kind="show" identifier="biqs" id="aKF-3y-2hg"/>
+                        <segue destination="JEc-PL-cbl" kind="show" identifier="login" id="jQ2-bG-UXW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWh-6m-i5h" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -46,6 +47,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bM6-AX-CFc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-244" y="16"/>
+        </scene>
+        <!--login-->
+        <scene sceneID="HhO-3f-a4h">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="login" storyboardName="Login" referencedIdentifier="login" id="JEc-PL-cbl" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rZf-Df-K8M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-239" y="273"/>
         </scene>
     </scenes>
 </document>
