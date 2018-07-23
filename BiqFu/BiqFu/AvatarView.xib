@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AvatarView" customModule="BiqFu" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Omm-4o-gGq">
+                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                </sceneKitView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="Omm-4o-gGq" secondAttribute="top" id="5iX-Ef-Z54"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="leading" secondItem="Omm-4o-gGq" secondAttribute="leading" id="VxQ-5x-vSs"/>
+                <constraint firstItem="Omm-4o-gGq" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="oql-ho-czo"/>
+                <constraint firstItem="Omm-4o-gGq" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="tQl-Uk-Y6F"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="sceneView" destination="Omm-4o-gGq" id="Gpa-bp-5pU"/>
+            </connections>
+        </view>
+    </objects>
+</document>

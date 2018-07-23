@@ -7,25 +7,69 @@
 //
 
 import UIKit
+import SwiftCodables
+import qBiqClientAPI
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "BiqCell"
+private let headerReuseIdentifier = "BiqHeader"
 
-struct BiqCollectionItem {
-	
+enum BiqsTableSection: Int {
+	case myBiqs, friendBiqs
+	var headerName: String {
+		switch self {
+		case .myBiqs:
+			return "Your Biqs"
+		case .friendBiqs:
+			return "Friend Biqs"
+		}
+	}
 }
 
-class BiqsViewController: UICollectionViewController {
-	var biqs: [BiqCollectionItem] = []
+extension BiqInstance {
+	func limit(_ type: BiqDeviceLimitType) -> String? {
+		return biq.limits?.filter({ $0.limitType == type }).first?.limitValueString
+	}
+	var color: UIColor {
+		if let str = limit(.colour), let c = UIColor(hex: str) {
+			return c
+		}
+		return UIColor.blue
+	}
+}
+
+struct BiqCollectionItem: Codable {
+	var index: IndexPath
+	var expanded = false
+	var deviceItem: BiqInstance {
+		if index.section == BiqsTableSection.myBiqs.rawValue {
+			return AppDelegate.state.myBiqs[index.item]
+		}
+		return AppDelegate.state.friendBiqs[index.item]
+	}
+	init(index: IndexPath, expanded: Bool = false) {
+		self.index = index
+		self.expanded = expanded
+	}
+}
+
+class BiqsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+	@IBOutlet var collectionView: UICollectionView!
+	@IBOutlet var collectionViewLayout: UICollectionViewLayout!
+	var biqs: [[BiqCollectionItem]] = [[],[]] {
+		didSet {
+			AppDelegate.state.set(biqs, forKey: "biqsTableCache")
+		}
+	}
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+		collectionView!.register(UINib(nibName: "BiqCollectionViewCell", bundle: nil),
+								 forCellWithReuseIdentifier: reuseIdentifier)
+		collectionView.register(UINib(nibName: "BiqCollectionViewHeader", bundle: nil),
+								forSupplementaryViewOfKind: "UICollectionElementKindSectionHeader",
+								withReuseIdentifier: headerReuseIdentifier)
+		let b0 = (0..<AppDelegate.state.myBiqs.count).map { BiqCollectionItem(index: IndexPath(item: $0, section: 0)) }
+		let b1 = (0..<AppDelegate.state.friendBiqs.count).map { BiqCollectionItem(index: IndexPath(item: $0, section: 1)) }
+		biqs = [b0, b1]
     }
 
     /*
@@ -37,57 +81,90 @@ class BiqsViewController: UICollectionViewController {
         // Pass the selected object to the new view controller.
     }
     */
+	
+	@IBAction func unwindToBiqs(segue: UIStoryboardSegue) {
+		
+	}
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return biqs.count
     }
 
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return biqs[section].count
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
-        return cell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! BiqCollectionViewCell
+		cell.set(biqs[indexPath.section][indexPath.item])
+		return cell
     }
+	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		collectionViewLayout.invalidateLayout()
+		let cell = collectionView.cellForItem(at: indexPath) as! BiqCollectionViewCell
+		collectionView.performBatchUpdates({
+			biqs[indexPath.section][indexPath.item].expanded = !biqs[indexPath.section][indexPath.item].expanded
+			cell.toggleExpanded()
+		}, completion: nil)
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+		guard kind == "UICollectionElementKindSectionHeader" else {
+			return UICollectionReusableView()
+		}
+		let cell = collectionView.dequeueReusableSupplementaryView(
+			ofKind: kind,
+			withReuseIdentifier: headerReuseIdentifier,
+			for: indexPath) as! BiqCollectionViewHeader
+		if indexPath.section == 0 {
+			cell.nameLabel.text = "Your Biqs"
+		} else {
+			cell.nameLabel.text = "Friend Biqs"
+		}
+		return cell
+	}
 
-    // MARK: UICollectionViewDelegate
+	@IBAction func logOut(_ sender: Any) {
+		AppDelegate.state.flush()
+		Authentication.shared?.logout {
+			response in
+			self.main {
+				try? response.get()
+				AppDelegate.state = nil
+				self.performSegue(withIdentifier: "logout", sender: self)
+			}
+		}
+	}
+	// MARK: UICollectionViewDelegate
 
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+    func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         return true
     }
     */
 
     /*
     // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         return true
     }
     */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
+	
+	// MARK: UICollectionViewDelegateFlowLayout
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		if biqs[indexPath.section][indexPath.item].expanded {
+			return expandedContentSize
+		}
+		return contractedContentSize
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+		return CGSize(width: 360, height: 45)
+	}
 
 }

@@ -44,65 +44,20 @@ func boxWidth(_ box: BoundingBox, scale: Float) -> Float {
 	return (box.max.x - box.min.x) * scale
 }
 
-enum AvatarNode: String {
-	case dog, cat, fox, bunny, elephant, frog
-	static let allCases: [AvatarNode] = [.dog, .cat, .fox, .bunny, .elephant, .frog]
-	func node(id: String) -> SCNNode {
-		let name = self.rawValue
-		let parent = SCNNode()
-		if let scene = SCNScene(named: "art.scnassets/\(name).scn"),
-			let node = scene.rootNode.childNode(withName: name, recursively: false) {
-			let scale = Float(0.0007)
-			node.scale = SCNVector3(x: scale, y: scale, z: scale)
-			addName(id, to: parent, avatarDepth: boxDepth(node.boundingBox, scale: node.scale.x))
-			parent.addChildNode(node)
-		}
-		return parent
-	}
-	init() {
-		let rnd = Int(arc4random_uniform(UInt32(AvatarNode.allCases.count-1)))
-		self = AvatarNode.allCases[rnd]
-	}
-	private func addName(_ name: String, to parent: SCNNode, avatarDepth: Float) {
-		let text = SCNText(string: name.split(separator: "-").last!, extrusionDepth: 0.5)
-		text.font = UIFont.systemFont(ofSize: 12)
-		text.firstMaterial?.diffuse.contents = UIColor.orange
-		text.firstMaterial?.specular.contents = UIColor.orange
-		let textNode = SCNNode(geometry: text)
-		parent.addChildNode(textNode)
-		let scale = Float(0.001)
-		textNode.scale = SCNVector3(scale, scale, scale)
-		let box = textNode.boundingBox
-		let width = boxWidth(box, scale: scale)
-		let depth = avatarDepth
-		textNode.runAction(SCNAction.sequence([
-			.rotateBy(x: CGFloat(.pi * -0.5), y: 0, z: 0, duration: 0.0),
-			.moveBy(x: -CGFloat(width / 2), y: 0, z: CGFloat(depth), duration: 0.0)
-			]))
-	}
-}
+let fadeDuration: TimeInterval = 2.5
 
-class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
+class TableViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
 	@IBOutlet var label: UILabel!
 	
 	private var requests: [VNRequest] = []
-	let fadeDuration: TimeInterval = 2.5
 	let rotateDuration: TimeInterval = 3
 	let waitDuration: TimeInterval = 0.5
 	var qrDetectMode = QRDetectMode.none
 	var session: ARSession { return sceneView.session }
 	var processing = 0
-	var foundBiqs = [String:SCNNode]()
-	
-	func getNode(id: String) -> SCNNode {
-		let nodeType = AvatarNode()
-		let node = nodeType.node(id: id)
-		node.opacity = 0.0
-		node.runAction(.fadeIn(duration: fadeDuration))
-		return node
-	}
+	var foundBiqs = [String:AvatarNode]()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,6 +94,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
 //			configuration.maximumNumberOfTrackedImages = 2
 //		}
 		configuration.planeDetection = .horizontal
+		configuration.isLightEstimationEnabled = true
 		let options: ARSession.RunOptions = [.resetTracking, .removeExistingAnchors]
 		sceneView.session.run(configuration, options: options)
 	}
@@ -173,7 +129,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
 				let topLeft = result.topLeft, bottomLeft = result.bottomLeft
 				let topRight = result.topRight, bottomRight = result.bottomRight
 				let biqId = url.lastPathComponent
-				
+				guard let instance = AppDelegate.state.biqBy(id: biqId) else {
+					continue
+				}
 				// Get the bounding box for the bar code and find the center
 				var rect = result.boundingBox
 				// Flip coordinates
@@ -206,13 +164,16 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
 					let tp = topLeftResult.worldTransform.position
 					let angle = atan2(bp.z - tp.z, bp.x - tp.x)
 					let transform =  hitTestResult.worldTransform
-					let node: SCNNode
+					let node: AvatarNode
 					if let n = self.foundBiqs[biqId] {
 //						print("Updating anchor for biq \(biqId)")
 						node = n
 					} else {
 //						print("Adding anchor for biq \(biqId)")
-						node = self.getNode(id: biqId)
+						node = instance.node
+						node.addName(biqId, to: node, avatarDepth: boxDepth(node.boundingBox, scale: node.scale.x))
+						node.opacity = 0.0
+						node.runAction(.fadeIn(duration: fadeDuration))
 						node.transform = .init(transform)
 						let c = SCNBillboardConstraint()
 						c.freeAxes = SCNBillboardAxis.Y

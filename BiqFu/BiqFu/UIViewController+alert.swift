@@ -57,11 +57,12 @@ extension UIViewController {
 		}
 	}
 	
-	private func alert(_ title: String, value: String, placeholder: String, message: String, action:@escaping(String) -> (), cancel:@escaping() -> ()) {
+	private func alert(_ title: String, value: String, placeholder: String, message: String, action: @escaping(String) -> (), cancel: @escaping() -> ()) {
 		DispatchQueue.main.async {
 			let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 			
-			alert.addTextField { (textField: UITextField) in
+			alert.addTextField {
+				textField in
 				textField.keyboardAppearance = .dark
 				textField.keyboardType = .default
 				textField.autocorrectionType = .default

@@ -5,29 +5,40 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="bold_led_board-7.ttf">
+            <string>BoldLEDBoard-7</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Opening View Controller-->
         <scene sceneID="mNz-Ly-L9K">
             <objects>
-                <viewController id="h23-0f-NM7" customClass="OpeningViewController" customModule="Bicci" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="h23-0f-NM7" customClass="OpeningViewController" customModule="BiqFu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hyQ-pu-FV8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bicci Launch Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJW-ci-qKY">
-                                <rect key="frame" x="109.5" y="333" width="156" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Biq Fu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGB-en-nMC">
+                                <rect key="frame" x="111.5" y="323.5" width="152.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="WYt-eo-9Hh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BoldLEDBoard-7" family="Bold LED Board-7" pointSize="30"/>
+                                <color key="textColor" name="LCDText"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" name="LCDLightText"/>
+                                <size key="shadowOffset" width="1" height="1"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="LCDBack"/>
                         <constraints>
-                            <constraint firstItem="hJW-ci-qKY" firstAttribute="centerX" secondItem="JEw-e5-huJ" secondAttribute="centerX" id="Yje-oV-C16"/>
-                            <constraint firstItem="hJW-ci-qKY" firstAttribute="centerY" secondItem="JEw-e5-huJ" secondAttribute="centerY" id="rrJ-6U-apU"/>
+                            <constraint firstItem="wGB-en-nMC" firstAttribute="centerY" secondItem="JEw-e5-huJ" secondAttribute="centerY" id="EUc-Sn-5QZ"/>
+                            <constraint firstItem="wGB-en-nMC" firstAttribute="centerX" secondItem="JEw-e5-huJ" secondAttribute="centerX" id="X91-YB-jxZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JEw-e5-huJ"/>
                     </view>
@@ -57,4 +68,15 @@
             <point key="canvasLocation" x="-239" y="273"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="LCDBack">
+            <color red="0.63599997758865356" green="0.6600000262260437" blue="0.57700002193450928" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="LCDLightText">
+            <color red="0.57599997520446777" green="0.58499997854232788" blue="0.53299999237060547" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="LCDText">
+            <color red="0.24699999392032623" green="0.25099998712539673" blue="0.23100000619888306" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
 </document>

@@ -1,111 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r7H-3M-DUK">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14306.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vJo-3y-NQI">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14278.2"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="bold_led_board-7.ttf">
+            <string>BoldLEDBoard-7</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Biqs View Controller-->
         <scene sceneID="85r-gB-cHM">
             <objects>
-                <viewController id="vJo-3y-NQI" customClass="BiqsViewController" customModule="Bicci" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="biqs" id="vJo-3y-NQI" customClass="BiqsViewController" customModule="BiqFu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ojL-SH-gfD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Tq-X7-hRf">
-                                <rect key="frame" x="16" y="70" width="343" height="527"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bbk-l8-sR1">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Tq-X7-hRf">
+                                <rect key="frame" x="16" y="126" width="343" height="562"/>
+                                <color key="backgroundColor" name="LCDBack"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="14" minimumInteritemSpacing="10" id="Bbk-l8-sR1">
+                                    <size key="itemSize" width="90" height="90"/>
+                                    <size key="headerReferenceSize" width="50" height="45"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eo5-ES-S0t">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" id="zsO-FZ-FRN">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="45"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="vJo-3y-NQI" id="zq1-NC-fwk"/>
                                     <outlet property="delegate" destination="vJo-3y-NQI" id="8kD-st-GBO"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5GF-ne-EvU">
-                                <rect key="frame" x="141.5" y="607" width="92" height="30"/>
-                                <state key="normal" title="To The Table!"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5GF-ne-EvU">
+                                <rect key="frame" x="30" y="708" width="315" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9Xv-Bi-y6D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BoldLEDBoard-7" family="Bold LED Board-7" pointSize="20"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="To The Table!">
+                                    <color key="titleColor" name="LCDText"/>
+                                    <color key="titleShadowColor" name="LCDLightText"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="LCDBorder"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="r7H-3M-DUK" kind="show" identifier="table" id="eIi-rf-pVe"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Biqs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34A-Ut-cKZ">
-                                <rect key="frame" x="127" y="20" width="121" height="36"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Biqs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34A-Ut-cKZ">
+                                <rect key="frame" x="136.33333333333334" y="64" width="102.33333333333334" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="BiU-ry-9Y0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BoldLEDBoard-7" family="Bold LED Board-7" pointSize="32"/>
+                                <color key="textColor" name="LCDText"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" name="LCDLightText"/>
+                                <size key="shadowOffset" width="1" height="1"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opU-ab-cvf">
+                                <rect key="frame" x="266.66666666666669" y="65" width="90" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="gCL-tf-YCT"/>
+                                    <constraint firstAttribute="width" constant="90" id="isT-ZM-XNW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" name="LCDText"/>
+                                    <color key="titleShadowColor" name="LCDLightText"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="LCDBorder"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logOut:" destination="vJo-3y-NQI" eventType="touchUpInside" id="bPv-rh-aSL"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="LCDBack"/>
                         <constraints>
-                            <constraint firstItem="34A-Ut-cKZ" firstAttribute="top" secondItem="V3C-iP-HN2" secondAttribute="top" id="0fL-OL-nP4"/>
-                            <constraint firstItem="9Tq-X7-hRf" firstAttribute="top" secondItem="V3C-iP-HN2" secondAttribute="top" constant="50" id="4B7-FR-Wd4"/>
-                            <constraint firstItem="5GF-ne-EvU" firstAttribute="top" secondItem="9Tq-X7-hRf" secondAttribute="bottom" constant="10" id="4g2-bC-px6"/>
+                            <constraint firstItem="34A-Ut-cKZ" firstAttribute="top" secondItem="V3C-iP-HN2" secondAttribute="top" constant="20" id="0fL-OL-nP4"/>
+                            <constraint firstItem="5GF-ne-EvU" firstAttribute="top" secondItem="9Tq-X7-hRf" secondAttribute="bottom" constant="20" id="3JS-y8-07Y"/>
                             <constraint firstItem="9Tq-X7-hRf" firstAttribute="leading" secondItem="V3C-iP-HN2" secondAttribute="leading" constant="16" id="73v-Ln-aSk"/>
-                            <constraint firstItem="V3C-iP-HN2" firstAttribute="bottom" secondItem="9Tq-X7-hRf" secondAttribute="bottom" constant="70" id="9cr-N4-dzI"/>
+                            <constraint firstItem="5GF-ne-EvU" firstAttribute="leading" secondItem="V3C-iP-HN2" secondAttribute="leading" constant="30" id="CK6-iw-LQP"/>
+                            <constraint firstItem="9Tq-X7-hRf" firstAttribute="top" secondItem="34A-Ut-cKZ" secondAttribute="bottom" constant="20" id="LMl-a9-Nlr"/>
+                            <constraint firstItem="V3C-iP-HN2" firstAttribute="trailing" secondItem="5GF-ne-EvU" secondAttribute="trailing" constant="30" id="Qq1-1h-MBU"/>
+                            <constraint firstItem="V3C-iP-HN2" firstAttribute="bottom" secondItem="5GF-ne-EvU" secondAttribute="bottom" constant="20" id="ThU-Fe-oOQ"/>
                             <constraint firstItem="5GF-ne-EvU" firstAttribute="centerX" secondItem="V3C-iP-HN2" secondAttribute="centerX" id="ZxG-by-XNZ"/>
+                            <constraint firstItem="opU-ab-cvf" firstAttribute="centerY" secondItem="34A-Ut-cKZ" secondAttribute="centerY" id="eYk-AD-qTQ"/>
+                            <constraint firstItem="opU-ab-cvf" firstAttribute="leading" secondItem="34A-Ut-cKZ" secondAttribute="trailing" constant="28" id="oGT-Zb-ZPr"/>
                             <constraint firstItem="V3C-iP-HN2" firstAttribute="trailing" secondItem="9Tq-X7-hRf" secondAttribute="trailing" constant="16" id="swA-9Y-yXQ"/>
                             <constraint firstItem="34A-Ut-cKZ" firstAttribute="centerX" secondItem="V3C-iP-HN2" secondAttribute="centerX" id="uyL-Yg-wrg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="V3C-iP-HN2"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="9Tq-X7-hRf" id="AOM-0c-yHi"/>
+                        <outlet property="collectionViewLayout" destination="Bbk-l8-sR1" id="a7X-w3-9q1"/>
+                        <segue destination="LyF-Gg-zXc" kind="unwind" identifier="logout" unwindAction="unwindToOpeningWithSegue:" id="Efa-qF-IcD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="exM-a6-pue" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="LyF-Gg-zXc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-100" y="-3.1484257871064472"/>
         </scene>
-        <!--View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="FDF-q9-uBJ">
             <objects>
-                <viewController storyboardIdentifier="biqs" id="r7H-3M-DUK" customClass="ViewController" customModule="Bicci" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="table" id="r7H-3M-DUK" customClass="TableViewController" customModule="BiqFu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4S1-Yh-bNQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMC-XX-YuB">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="24" width="375" height="754"/>
                             </arscnView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BuZ-Pl-sQy">
-                                <rect key="frame" x="166.5" y="588" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5eg-F1-Gzp">
+                                <rect key="frame" x="24" y="44" width="52" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="52" id="RaI-AR-2WW"/>
+                                </constraints>
+                                <state key="normal" title="Exit"/>
+                                <connections>
+                                    <segue destination="Mk1-RP-LEL" kind="unwind" unwindAction="unwindToBiqsWithSegue:" id="Hpf-K0-4Uo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="dGw-6S-erP" firstAttribute="trailing" secondItem="iMC-XX-YuB" secondAttribute="trailing" id="5Dx-2d-sS0"/>
                             <constraint firstItem="iMC-XX-YuB" firstAttribute="leading" secondItem="dGw-6S-erP" secondAttribute="leading" id="F4D-zi-5S5"/>
+                            <constraint firstItem="5eg-F1-Gzp" firstAttribute="leading" secondItem="dGw-6S-erP" secondAttribute="leading" constant="24" id="ILN-46-is5"/>
                             <constraint firstItem="dGw-6S-erP" firstAttribute="bottom" secondItem="iMC-XX-YuB" secondAttribute="bottom" id="RQb-Oi-oBq"/>
                             <constraint firstItem="dGw-6S-erP" firstAttribute="top" secondItem="iMC-XX-YuB" secondAttribute="top" constant="20" id="Spk-ef-YbT"/>
-                            <constraint firstItem="BuZ-Pl-sQy" firstAttribute="centerX" secondItem="dGw-6S-erP" secondAttribute="centerX" id="ga2-OK-49x"/>
-                            <constraint firstItem="dGw-6S-erP" firstAttribute="bottom" secondItem="BuZ-Pl-sQy" secondAttribute="bottom" constant="58" id="zCm-vO-nWx"/>
+                            <constraint firstItem="5eg-F1-Gzp" firstAttribute="top" secondItem="dGw-6S-erP" secondAttribute="top" id="jjK-SR-z1T"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dGw-6S-erP"/>
                     </view>
                     <connections>
-                        <outlet property="label" destination="BuZ-Pl-sQy" id="DoP-RL-iQm"/>
                         <outlet property="sceneView" destination="iMC-XX-YuB" id="S1M-qe-ngy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uen-d5-4tY" sceneMemberID="firstResponder"/>
+                <exit id="Mk1-RP-LEL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1471" y="133"/>
+            <point key="canvasLocation" x="1469.5999999999999" y="132.68365817091455"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="LCDBack">
+            <color red="0.66299998760223389" green="0.69099998474121094" blue="0.60900002717971802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="LCDBorder">
+            <color red="0.38199999928474426" green="0.3880000114440918" blue="0.36000001430511475" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="LCDLightText">
+            <color red="0.57599997520446777" green="0.58499997854232788" blue="0.53299999237060547" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="LCDText">
+            <color red="0.24699999392032623" green="0.25099998712539673" blue="0.23100000619888306" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
 </document>

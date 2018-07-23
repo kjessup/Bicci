@@ -24,10 +24,25 @@
 		F803EA7E20F68E1F00738F73 /* BiqsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F803EA7D20F68E1F00738F73 /* BiqsViewController.swift */; };
 		F803EA8020F68FEA00738F73 /* BiqCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F803EA7F20F68FEA00738F73 /* BiqCollectionViewCell.xib */; };
 		F803EA8220F690B700738F73 /* BiqCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F803EA8120F690B700738F73 /* BiqCollectionViewCell.swift */; };
+		F809C2332102736800879212 /* AvatarNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809C2322102736800879212 /* AvatarNode.swift */; };
 		F80BD8E820F2DA5F00150B6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F80BD8E720F2DA5F00150B6B /* Assets.xcassets */; };
+		F87080E521064FE10086255B /* IndicatorBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87080E421064FE00086255B /* IndicatorBar.swift */; };
+		F87080E7210650240086255B /* IndicatorBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = F87080E6210650240086255B /* IndicatorBar.xib */; };
+		F87080E9210661E80086255B /* BiqInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87080E8210661E80086255B /* BiqInstance.swift */; };
+		F896726D20F6DA6800EF1320 /* BiqFuCodables.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F896726C20F6DA6800EF1320 /* BiqFuCodables.framework */; };
+		F896726E20F6DA6800EF1320 /* BiqFuCodables.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F896726C20F6DA6800EF1320 /* BiqFuCodables.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F896727120F6DCE400EF1320 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F896727020F6DCE400EF1320 /* GameKit.framework */; };
+		F896727420F6E7A300EF1320 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F896727320F6E7A300EF1320 /* AppState.swift */; };
+		F896727620F711DE00EF1320 /* BiqCollectionViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = F896727520F711DE00EF1320 /* BiqCollectionViewHeader.xib */; };
+		F896727820F724C100EF1320 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F896727720F724C100EF1320 /* Extensions.swift */; };
+		F8A5980A20F7D4BE00314A33 /* bold_led_board-7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A5980920F7D4BE00314A33 /* bold_led_board-7.ttf */; };
+		F8AE1B7420F8044800ED52AD /* ModalDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8AE1B7320F8044800ED52AD /* ModalDialog.xib */; };
+		F8AE1B7620F804F100ED52AD /* ModalDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AE1B7520F804F100ED52AD /* ModalDialog.swift */; };
+		F8C47A4520FA5C0D006AF145 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C47A4420FA5C0D006AF145 /* AvatarView.swift */; };
+		F8C47A4720FA5C1D006AF145 /* AvatarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8C47A4620FA5C1D006AF145 /* AvatarView.xib */; };
 		F8D22CE420E71AEC00249B01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D22CE320E71AEC00249B01 /* AppDelegate.swift */; };
 		F8D22CE620E71AEC00249B01 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F8D22CE520E71AEC00249B01 /* art.scnassets */; };
-		F8D22CE820E71AEC00249B01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D22CE720E71AEC00249B01 /* ViewController.swift */; };
+		F8D22CE820E71AEC00249B01 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D22CE720E71AEC00249B01 /* TableViewController.swift */; };
 		F8D22CEB20E71AEC00249B01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D22CE920E71AEC00249B01 /* Main.storyboard */; };
 		F8D22CF020E71AF000249B01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D22CEE20E71AF000249B01 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -41,6 +56,7 @@
 			files = (
 				F803EA6D20F560D100738F73 /* SwiftCodables.framework in Embed Frameworks */,
 				F803EA7020F560D400738F73 /* qBiqClientAPI.framework in Embed Frameworks */,
+				F896726E20F6DA6800EF1320 /* BiqFuCodables.framework in Embed Frameworks */,
 				F803EA6A20F560CD00738F73 /* OAuthSwift.framework in Embed Frameworks */,
 				F803EA6620F560CA00738F73 /* SAuthCodables.framework in Embed Frameworks */,
 			);
@@ -63,11 +79,26 @@
 		F803EA7D20F68E1F00738F73 /* BiqsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiqsViewController.swift; sourceTree = "<group>"; };
 		F803EA7F20F68FEA00738F73 /* BiqCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BiqCollectionViewCell.xib; sourceTree = "<group>"; };
 		F803EA8120F690B700738F73 /* BiqCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiqCollectionViewCell.swift; sourceTree = "<group>"; };
-		F80BD8E720F2DA5F00150B6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
-		F8D22CE020E71AEC00249B01 /* Bicci.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bicci.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F809C2322102736800879212 /* AvatarNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarNode.swift; sourceTree = "<group>"; };
+		F80BD8E720F2DA5F00150B6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F87080E421064FE00086255B /* IndicatorBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorBar.swift; sourceTree = "<group>"; };
+		F87080E6210650240086255B /* IndicatorBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndicatorBar.xib; sourceTree = "<group>"; };
+		F87080E8210661E80086255B /* BiqInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiqInstance.swift; sourceTree = "<group>"; };
+		F896726C20F6DA6800EF1320 /* BiqFuCodables.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BiqFuCodables.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F896727020F6DCE400EF1320 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		F896727220F6DD1B00EF1320 /* BiqFu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = BiqFu.entitlements; path = BiqFu/BiqFu.entitlements; sourceTree = "<group>"; };
+		F896727320F6E7A300EF1320 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		F896727520F711DE00EF1320 /* BiqCollectionViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BiqCollectionViewHeader.xib; sourceTree = "<group>"; };
+		F896727720F724C100EF1320 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F8A5980920F7D4BE00314A33 /* bold_led_board-7.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "bold_led_board-7.ttf"; sourceTree = "<group>"; };
+		F8AE1B7320F8044800ED52AD /* ModalDialog.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalDialog.xib; sourceTree = "<group>"; };
+		F8AE1B7520F804F100ED52AD /* ModalDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalDialog.swift; sourceTree = "<group>"; };
+		F8C47A4420FA5C0D006AF145 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		F8C47A4620FA5C1D006AF145 /* AvatarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvatarView.xib; sourceTree = "<group>"; };
+		F8D22CE020E71AEC00249B01 /* BiqFu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BiqFu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D22CE320E71AEC00249B01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8D22CE520E71AEC00249B01 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		F8D22CE720E71AEC00249B01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F8D22CE720E71AEC00249B01 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		F8D22CEA20E71AEC00249B01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F8D22CEF20E71AF000249B01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8D22CF120E71AF000249B01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,6 +111,8 @@
 			files = (
 				F803EA6C20F560D100738F73 /* SwiftCodables.framework in Frameworks */,
 				F803EA6F20F560D400738F73 /* qBiqClientAPI.framework in Frameworks */,
+				F896726D20F6DA6800EF1320 /* BiqFuCodables.framework in Frameworks */,
+				F896727120F6DCE400EF1320 /* GameKit.framework in Frameworks */,
 				F803EA6920F560CD00738F73 /* OAuthSwift.framework in Frameworks */,
 				F803EA6520F560CA00738F73 /* SAuthCodables.framework in Frameworks */,
 			);
@@ -88,22 +121,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F896726F20F6DCE400EF1320 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F896727020F6DCE400EF1320 /* GameKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8AE1B7220F8025200ED52AD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F8D22CE920E71AEC00249B01 /* Main.storyboard */,
+				F8D22CEE20E71AF000249B01 /* LaunchScreen.storyboard */,
+				F803EA7320F567AB00738F73 /* Biqs.storyboard */,
+				F803EA7920F568E700738F73 /* Login.storyboard */,
+				F803EA7F20F68FEA00738F73 /* BiqCollectionViewCell.xib */,
+				F896727520F711DE00EF1320 /* BiqCollectionViewHeader.xib */,
+				F8AE1B7320F8044800ED52AD /* ModalDialog.xib */,
+				F8D22CE520E71AEC00249B01 /* art.scnassets */,
+				F80BD8E720F2DA5F00150B6B /* Assets.xcassets */,
+				F8A5980920F7D4BE00314A33 /* bold_led_board-7.ttf */,
+				F87080E6210650240086255B /* IndicatorBar.xib */,
+				F8C47A4620FA5C1D006AF145 /* AvatarView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		F8D22CD720E71AEC00249B01 = {
 			isa = PBXGroup;
 			children = (
 				F8D22CE220E71AEC00249B01 /* Bicci */,
 				F8D22CE120E71AEC00249B01 /* Products */,
+				F896727220F6DD1B00EF1320 /* BiqFu.entitlements */,
 				F803EA6E20F560D400738F73 /* qBiqClientAPI.framework */,
 				F803EA6B20F560D100738F73 /* SwiftCodables.framework */,
 				F803EA6820F560CD00738F73 /* OAuthSwift.framework */,
 				F803EA6420F560CA00738F73 /* SAuthCodables.framework */,
+				F896726C20F6DA6800EF1320 /* BiqFuCodables.framework */,
+				F896726F20F6DCE400EF1320 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		F8D22CE120E71AEC00249B01 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F8D22CE020E71AEC00249B01 /* Bicci.app */,
+				F8D22CE020E71AEC00249B01 /* BiqFu.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,32 +174,34 @@
 		F8D22CE220E71AEC00249B01 /* Bicci */ = {
 			isa = PBXGroup;
 			children = (
+				F896727320F6E7A300EF1320 /* AppState.swift */,
 				F8D22CE320E71AEC00249B01 /* AppDelegate.swift */,
-				F8D22CE720E71AEC00249B01 /* ViewController.swift */,
+				F87080E8210661E80086255B /* BiqInstance.swift */,
+				F8D22CE720E71AEC00249B01 /* TableViewController.swift */,
 				F803EA7120F5677700738F73 /* OpeningViewController.swift */,
 				F803EA7520F5688800738F73 /* LoginViewController.swift */,
 				F803EA7720F568D700738F73 /* CreateAccountViewController.swift */,
 				F803EA7B20F6742F00738F73 /* UIViewController+alert.swift */,
 				F803EA7D20F68E1F00738F73 /* BiqsViewController.swift */,
 				F803EA8120F690B700738F73 /* BiqCollectionViewCell.swift */,
-				F8D22CE920E71AEC00249B01 /* Main.storyboard */,
-				F8D22CEE20E71AF000249B01 /* LaunchScreen.storyboard */,
-				F803EA7320F567AB00738F73 /* Biqs.storyboard */,
-				F803EA7920F568E700738F73 /* Login.storyboard */,
-				F8D22CE520E71AEC00249B01 /* art.scnassets */,
-				F80BD8E720F2DA5F00150B6B /* Assets.xcassets */,
+				F896727720F724C100EF1320 /* Extensions.swift */,
+				F8C47A4420FA5C0D006AF145 /* AvatarView.swift */,
+				F809C2322102736800879212 /* AvatarNode.swift */,
+				F8AE1B7220F8025200ED52AD /* Resources */,
 				F8D22CF120E71AF000249B01 /* Info.plist */,
-				F803EA7F20F68FEA00738F73 /* BiqCollectionViewCell.xib */,
+				F8AE1B7520F804F100ED52AD /* ModalDialog.swift */,
+				F87080E421064FE00086255B /* IndicatorBar.swift */,
 			);
-			path = Bicci;
+			name = Bicci;
+			path = BiqFu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F8D22CDF20E71AEC00249B01 /* Bicci */ = {
+		F8D22CDF20E71AEC00249B01 /* BiqFu */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F8D22CF420E71AF000249B01 /* Build configuration list for PBXNativeTarget "Bicci" */;
+			buildConfigurationList = F8D22CF420E71AF000249B01 /* Build configuration list for PBXNativeTarget "BiqFu" */;
 			buildPhases = (
 				F8D22CDC20E71AEC00249B01 /* Sources */,
 				F8D22CDD20E71AEC00249B01 /* Frameworks */,
@@ -147,9 +212,9 @@
 			);
 			dependencies = (
 			);
-			name = Bicci;
+			name = BiqFu;
 			productName = Bicci;
-			productReference = F8D22CE020E71AEC00249B01 /* Bicci.app */;
+			productReference = F8D22CE020E71AEC00249B01 /* BiqFu.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -164,10 +229,18 @@
 				TargetAttributes = {
 					F8D22CDF20E71AEC00249B01 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.GameCenter.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
-			buildConfigurationList = F8D22CDB20E71AEC00249B01 /* Build configuration list for PBXProject "Bicci" */;
+			buildConfigurationList = F8D22CDB20E71AEC00249B01 /* Build configuration list for PBXProject "BiqFu" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -180,7 +253,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F8D22CDF20E71AEC00249B01 /* Bicci */,
+				F8D22CDF20E71AEC00249B01 /* BiqFu */,
 			);
 		};
 /* End PBXProject section */
@@ -190,13 +263,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F896727620F711DE00EF1320 /* BiqCollectionViewHeader.xib in Resources */,
+				F8C47A4720FA5C1D006AF145 /* AvatarView.xib in Resources */,
 				F803EA7420F567AB00738F73 /* Biqs.storyboard in Resources */,
 				F8D22CE620E71AEC00249B01 /* art.scnassets in Resources */,
 				F803EA7A20F568E700738F73 /* Login.storyboard in Resources */,
 				F8D22CF020E71AF000249B01 /* LaunchScreen.storyboard in Resources */,
 				F80BD8E820F2DA5F00150B6B /* Assets.xcassets in Resources */,
 				F803EA8020F68FEA00738F73 /* BiqCollectionViewCell.xib in Resources */,
+				F8A5980A20F7D4BE00314A33 /* bold_led_board-7.ttf in Resources */,
 				F8D22CEB20E71AEC00249B01 /* Main.storyboard in Resources */,
+				F8AE1B7420F8044800ED52AD /* ModalDialog.xib in Resources */,
+				F87080E7210650240086255B /* IndicatorBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,12 +285,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8AE1B7620F804F100ED52AD /* ModalDialog.swift in Sources */,
+				F8C47A4520FA5C0D006AF145 /* AvatarView.swift in Sources */,
 				F803EA7820F568D700738F73 /* CreateAccountViewController.swift in Sources */,
 				F803EA8220F690B700738F73 /* BiqCollectionViewCell.swift in Sources */,
+				F809C2332102736800879212 /* AvatarNode.swift in Sources */,
+				F87080E521064FE10086255B /* IndicatorBar.swift in Sources */,
 				F803EA7620F5688900738F73 /* LoginViewController.swift in Sources */,
-				F8D22CE820E71AEC00249B01 /* ViewController.swift in Sources */,
+				F896727420F6E7A300EF1320 /* AppState.swift in Sources */,
+				F8D22CE820E71AEC00249B01 /* TableViewController.swift in Sources */,
+				F896727820F724C100EF1320 /* Extensions.swift in Sources */,
 				F803EA7C20F6742F00738F73 /* UIViewController+alert.swift in Sources */,
 				F803EA7220F5677700738F73 /* OpeningViewController.swift in Sources */,
+				F87080E9210661E80086255B /* BiqInstance.swift in Sources */,
 				F803EA7E20F68E1F00738F73 /* BiqsViewController.swift in Sources */,
 				F8D22CE420E71AEC00249B01 /* AppDelegate.swift in Sources */,
 			);
@@ -358,14 +443,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BiqFu/BiqFu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L2NAZNC754;
-				INFOPLIST_FILE = Bicci/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BiqFu/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ca.treefrog.Bicci;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.treefrog.BiqFu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -376,14 +462,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BiqFu/BiqFu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L2NAZNC754;
-				INFOPLIST_FILE = Bicci/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BiqFu/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ca.treefrog.Bicci;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.treefrog.BiqFu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -393,7 +480,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F8D22CDB20E71AEC00249B01 /* Build configuration list for PBXProject "Bicci" */ = {
+		F8D22CDB20E71AEC00249B01 /* Build configuration list for PBXProject "BiqFu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F8D22CF220E71AF000249B01 /* Debug */,
@@ -402,7 +489,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F8D22CF420E71AF000249B01 /* Build configuration list for PBXNativeTarget "Bicci" */ = {
+		F8D22CF420E71AF000249B01 /* Build configuration list for PBXNativeTarget "BiqFu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F8D22CF520E71AF000249B01 /* Debug */,

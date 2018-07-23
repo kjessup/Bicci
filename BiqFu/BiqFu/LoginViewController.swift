@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
 			let password = passwordField.text,
 			!email.isEmpty,
 			!password.isEmpty else {
-				return alert("Complete Fields", message: "Enter an email address and password to sign in.")
+				return alert("You're not done yet.", message: "Enter an email address and password to sign in.")
 		}
 		auth.login(email: email, password: password) {
 			response in
@@ -40,6 +40,16 @@ class LoginViewController: UIViewController {
 				self.alert(error)
 			}
 		}
+	}
+	@IBAction func createAccount(_ sender: Any) {
+		guard let auth = Authentication.shared,
+			let email = emailField.text,
+			let password = passwordField.text,
+			!email.isEmpty,
+			!password.isEmpty else {
+				return alert("You're not done yet.", message: "Enter an email address and password to sign in.")
+		}
+		
 	}
 	/*
     // MARK: - Navigation

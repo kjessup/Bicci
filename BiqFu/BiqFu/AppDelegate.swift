@@ -9,17 +9,13 @@
 import UIKit
 import qBiqClientAPI
 import SwiftCodables
-
-typealias DeviceItem = DeviceAPI.ListDevicesResponseItem
-
-struct AppState: Codable {
-	var myBiqs: [DeviceItem]
-	var friendBiqs: [DeviceItem]
-}
+import GameKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 	static let authentication = Authentication()
+	static var state: AppState!
+	
 	var window: UIWindow?
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -29,6 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		} else {
 			// not logged in
 		}
+//		GKLocalPlayer.local.authenticateHandler = {
+//			controller, error in
+//			print("GKLocalPlayer.local.authenticateHandler")
+//		}
 		return true
 	}
 

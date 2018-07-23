@@ -2,9 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Bicci/Bicci.xcodeproj">
+      location = "group:BiqFu/BiqFu.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:qBiqClientAPI/qBiqClientAPI.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../BiqFuCodables/BiqFuCodables.xcodeproj">
    </FileRef>
 </Workspace>

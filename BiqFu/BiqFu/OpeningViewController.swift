@@ -22,23 +22,29 @@ class OpeningViewController: UIViewController {
 			guard let r = try? response.get(), r, let user = Authentication.shared?.user else {
 				return self.main { self.performSegue(withIdentifier: "login", sender: self) }
 			}
+			AppDelegate.state = AppState() // only after user is acquired
 			DeviceAPI.listDevices(user: user) {
 				response in
 				do {
-					let devices: [DeviceItem] = try response.get()
-					let device: BiqDevice
-					let lastObservation: ObsDatabase.BiqObservation?
-					let shareCount: Int?
-					let limits: [DeviceLimit]?
-					
-					
-					
-					
+					let myId = user.id
+					let devices: [BiqInstance] = try response.get().map { BiqInstance(biq: $0) }
+					var owned = [BiqInstance]()
+					var friend = [BiqInstance]()
+					for item in devices {
+						if item.biq.device.ownerId == myId {
+							owned.append(item)
+						} else {
+							friend.append(item)
+						}
+					}
+					AppDelegate.state.myBiqs = owned
+					AppDelegate.state.friendBiqs = friend
+					self.main { self.performSegue(withIdentifier: "biqs", sender: self) }
 				} catch {
 					self.alert(error)
+					self.main { self.performSegue(withIdentifier: "login", sender: self) }
 				}
 			}
-			self.main { self.performSegue(withIdentifier: "biqs", sender: self) }
 		}
 	}
 
