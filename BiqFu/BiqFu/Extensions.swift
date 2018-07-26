@@ -29,3 +29,9 @@ extension UIView {
 		set { layer.borderColor = newValue.cgColor }
 	}
 }
+
+extension Error {
+	func displayForUser() {
+		print("\(self)") // expand
+	}
+}

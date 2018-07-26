@@ -26,10 +26,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="100" height="90"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ITm-6Q-pq7" customClass="AvatarView" customModule="BiqFu" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="2" width="68.5" height="68.5"/>
+                                        <rect key="frame" x="17" y="2" width="66.5" height="66.5"/>
                                         <subviews>
                                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQG-nD-3hj">
-                                                <rect key="frame" x="0.0" y="0.0" width="68.5" height="68.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="66.5" height="66.5"/>
                                             </sceneKitView>
                                         </subviews>
                                         <constraints>
@@ -50,7 +50,7 @@
                                         </connections>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8RATEE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pW-wf-zy0">
-                                        <rect key="frame" x="0.0" y="70.5" width="100" height="19.5"/>
+                                        <rect key="frame" x="0.0" y="68.5" width="100" height="19.5"/>
                                         <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="16"/>
                                         <color key="textColor" name="LCDText"/>
                                         <nil key="highlightedColor"/>
@@ -61,7 +61,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="GVE-gE-dPO"/>
                                     <constraint firstAttribute="trailing" secondItem="7pW-wf-zy0" secondAttribute="trailing" id="OyD-pe-LRQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="7pW-wf-zy0" secondAttribute="bottom" id="Pkc-xv-AlH"/>
+                                    <constraint firstAttribute="bottom" secondItem="7pW-wf-zy0" secondAttribute="bottom" constant="2" id="Pkc-xv-AlH"/>
                                     <constraint firstItem="ITm-6Q-pq7" firstAttribute="centerX" secondItem="tKP-Tz-6pG" secondAttribute="centerX" id="fcx-xF-sa1"/>
                                     <constraint firstItem="7pW-wf-zy0" firstAttribute="leading" secondItem="tKP-Tz-6pG" secondAttribute="leading" id="icI-CM-31K"/>
                                     <constraint firstItem="ITm-6Q-pq7" firstAttribute="top" secondItem="tKP-Tz-6pG" secondAttribute="top" constant="2" id="nev-gq-Hyh"/>
@@ -109,7 +109,7 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="4"/>
+                                                <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -130,7 +130,7 @@
                                         <color key="value" name="LCDText"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="2"/>
+                                        <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>

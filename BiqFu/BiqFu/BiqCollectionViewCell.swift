@@ -44,17 +44,21 @@ class BiqCollectionViewCell: UICollectionViewCell {
 		super.prepareForReuse()
 	}
 	func set(_ item: BiqCollectionItem) {
-		let deviceItem = item.deviceItem
-		biqName.text = deviceItem.biq.device.name
-		contentView.backgroundColor = deviceItem.color
+		let instance = item.instance
+		biqName.text = instance.biqDeviceItem.device.name
+		contentView.backgroundColor = instance.color
 		if item.expanded {
 			widthConstraint.constant = expandedContentSize.width
 		} else {
 			widthConstraint.constant = contractedContentSize.width
 		}
-		let avatar = deviceItem.node
+		let avatar = instance.node
 		avatarScene.setAvatar(avatar)
-		healthIndicator.multiplier = CGFloat(deviceItem.health) / 100.0
+		healthIndicator.multiplier = CGFloat(instance.health) / 100.0
+		strLabel.text = "\(instance.str)"
+		dexLabel.text = "\(instance.dex)"
+		intLabel.text = "\(instance.int)"
+		chaLabel.text = "\(instance.cha)"
 	}
 	func toggleExpanded() {
 		if expanded {

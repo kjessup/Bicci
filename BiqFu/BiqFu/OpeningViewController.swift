@@ -31,7 +31,7 @@ class OpeningViewController: UIViewController {
 					var owned = [BiqInstance]()
 					var friend = [BiqInstance]()
 					for item in devices {
-						if item.biq.device.ownerId == myId {
+						if item.biqDeviceItem.device.ownerId == myId {
 							owned.append(item)
 						} else {
 							friend.append(item)

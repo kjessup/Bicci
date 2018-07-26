@@ -133,7 +133,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="exM-a6-pue" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="LyF-Gg-zXc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-100" y="-3.1484257871064472"/>
+            <point key="canvasLocation" x="-162" y="-4"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="FDF-q9-uBJ">
@@ -145,6 +145,10 @@
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMC-XX-YuB">
                                 <rect key="frame" x="0.0" y="24" width="375" height="754"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="eUp-Ua-5tW" appends="YES" id="Uan-AG-6cS"/>
+                                </connections>
                             </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5eg-F1-Gzp">
                                 <rect key="frame" x="24" y="44" width="52" height="30"/>
@@ -169,12 +173,27 @@
                     </view>
                     <connections>
                         <outlet property="sceneView" destination="iMC-XX-YuB" id="S1M-qe-ngy"/>
+                        <segue destination="9qD-1m-Zzd" kind="show" identifier="NewBiq" id="Xu3-eR-JsK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uen-d5-4tY" sceneMemberID="firstResponder"/>
                 <exit id="Mk1-RP-LEL" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="eUp-Ua-5tW">
+                    <connections>
+                        <action selector="viewTapped:" destination="r7H-3M-DUK" id="eHI-AC-Hoc"/>
+                        <outlet property="delegate" destination="r7H-3M-DUK" id="JsP-5j-iir"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1469.5999999999999" y="132.68365817091455"/>
+            <point key="canvasLocation" x="834" y="-4"/>
+        </scene>
+        <!--NewBiq-->
+        <scene sceneID="cUJ-Fo-zr1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewBiq" id="9qD-1m-Zzd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9b0-Zm-cPF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1592" y="-4"/>
         </scene>
     </scenes>
     <resources>

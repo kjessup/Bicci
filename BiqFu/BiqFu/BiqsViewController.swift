@@ -13,10 +13,12 @@ import qBiqClientAPI
 private let reuseIdentifier = "BiqCell"
 private let headerReuseIdentifier = "BiqHeader"
 
-enum BiqsTableSection: Int {
-	case myBiqs, friendBiqs
+enum BiqsTableSection: Int, CaseIterable {
+	case myBiqs, friendBiqs, visibleBiqs
 	var headerName: String {
 		switch self {
+		case .visibleBiqs:
+			return "Visible Biqs"
 		case .myBiqs:
 			return "Your Biqs"
 		case .friendBiqs:
@@ -27,7 +29,7 @@ enum BiqsTableSection: Int {
 
 extension BiqInstance {
 	func limit(_ type: BiqDeviceLimitType) -> String? {
-		return biq.limits?.filter({ $0.limitType == type }).first?.limitValueString
+		return biqDeviceItem.limits?.filter({ $0.limitType == type }).first?.limitValueString
 	}
 	var color: UIColor {
 		if let str = limit(.colour), let c = UIColor(hex: str) {
@@ -40,7 +42,7 @@ extension BiqInstance {
 struct BiqCollectionItem: Codable {
 	var index: IndexPath
 	var expanded = false
-	var deviceItem: BiqInstance {
+	var instance: BiqInstance {
 		if index.section == BiqsTableSection.myBiqs.rawValue {
 			return AppDelegate.state.myBiqs[index.item]
 		}
@@ -55,9 +57,9 @@ struct BiqCollectionItem: Codable {
 class BiqsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 	@IBOutlet var collectionView: UICollectionView!
 	@IBOutlet var collectionViewLayout: UICollectionViewLayout!
-	var biqs: [[BiqCollectionItem]] = [[],[]] {
+	var biqs: [[BiqCollectionItem]] = [[],[],[]] {
 		didSet {
-			AppDelegate.state.set(biqs, forKey: "biqsTableCache")
+			AppDelegate.state.set([biqs[0], biqs[1]], forKey: "biqsTableCache")
 		}
 	}
     override func viewDidLoad() {
@@ -69,8 +71,13 @@ class BiqsViewController: UIViewController, UICollectionViewDelegate, UICollecti
 								withReuseIdentifier: headerReuseIdentifier)
 		let b0 = (0..<AppDelegate.state.myBiqs.count).map { BiqCollectionItem(index: IndexPath(item: $0, section: 0)) }
 		let b1 = (0..<AppDelegate.state.friendBiqs.count).map { BiqCollectionItem(index: IndexPath(item: $0, section: 1)) }
-		biqs = [b0, b1]
+		biqs = [b0, b1, []]
     }
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		collectionView.reloadData()
+	}
 
     /*
     // MARK: - Navigation
@@ -89,12 +96,12 @@ class BiqsViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: UICollectionViewDataSource
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return biqs.count
+        return BiqsTableSection.allCases.count-1//?? remove visible biqs?
     }
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return biqs[section].count
+		return biqs[section].count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -113,18 +120,15 @@ class BiqsViewController: UIViewController, UICollectionViewDelegate, UICollecti
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-		guard kind == "UICollectionElementKindSectionHeader" else {
+		guard kind == "UICollectionElementKindSectionHeader",
+			let sec = BiqsTableSection(rawValue: indexPath.section) else {
 			return UICollectionReusableView()
 		}
 		let cell = collectionView.dequeueReusableSupplementaryView(
-			ofKind: kind,
-			withReuseIdentifier: headerReuseIdentifier,
-			for: indexPath) as! BiqCollectionViewHeader
-		if indexPath.section == 0 {
-			cell.nameLabel.text = "Your Biqs"
-		} else {
-			cell.nameLabel.text = "Friend Biqs"
-		}
+									ofKind: kind,
+									withReuseIdentifier: headerReuseIdentifier,
+									for: indexPath) as! BiqCollectionViewHeader
+		cell.nameLabel.text = sec.headerName
 		return cell
 	}
 

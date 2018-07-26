@@ -11,25 +11,23 @@ import SwiftCodables
 import qBiqClientAPI
 
 // don't create unless logged in
-struct AppState: Codable {
+class AppState {
 	private let userId: UUID
 	var myBiqs: [BiqInstance] = [] {
-		didSet {
-			set(myBiqs, forKey: "myBiqs")
-		}
+		didSet { set(myBiqs, forKey: "myBiqs") }
 	}
 	var friendBiqs: [BiqInstance] = [] {
-		didSet {
-			set(friendBiqs, forKey: "friendBiqs")
-		}
+		didSet { set(friendBiqs, forKey: "friendBiqs") }
 	}
+	var visibleBiqs: [BiqInstance] = []
+	var newBiq: AvatarNode? = nil
 	init() {
 		userId = Authentication.shared!.user!.id
 		myBiqs = value([BiqInstance].self, forKey: "myBiqs") ?? []
 		friendBiqs = value([BiqInstance].self, forKey: "friendBiqs") ?? []
 	}
 	func biqBy(id: DeviceURN) -> BiqInstance? {
-		return myBiqs.first(where: { $0.biq.device.id == id }) ?? friendBiqs.first(where: { $0.biq.device.id == id })
+		return myBiqs.first(where: { $0.biqDeviceItem.device.id == id }) ?? friendBiqs.first(where: { $0.biqDeviceItem.device.id == id }) ?? visibleBiqs.first(where: { $0.biqDeviceItem.device.id == id })
 	}
 	func flush() {
 		set(myBiqs, forKey: "\(userId).myBiqs")

@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14306.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Io3-rC-hpi">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14278.2"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="bold_led_board-7.ttf">
+            <string>BoldLEDBoard-7</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--New Biq-->
+        <scene sceneID="6Uo-gO-NGg">
+            <objects>
+                <viewController storyboardIdentifier="NewBiq" title="New Biq" id="Io3-rC-hpi" customClass="NewBicViewController" customModule="BiqFu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PUr-cY-wND">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Biq" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NZ-5J-7qx">
+                                <rect key="frame" x="97" y="60" width="181" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="TNz-Zj-toJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BoldLEDBoard-7" family="Bold LED Board-7" pointSize="30"/>
+                                <color key="textColor" name="LCDText"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" name="LCDLightText"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5I-j2-beR">
+                                <rect key="frame" x="20" y="120" width="355" height="97.5"/>
+                                <string key="text">You've discovered a Biq in the wild!
+
+You can choose to tame this Biq and discover its abilities.</string>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
+                                <color key="textColor" name="LCDText"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" name="LCDLightText"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZG-0c-Txf">
+                                <rect key="frame" x="35.5" y="307.5" width="304" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jaU-NP-DXU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BoldLEDBoard-7" family="Bold LED Board-7" pointSize="17"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" name="LCDText"/>
+                                    <color key="titleShadowColor" name="LCDLightText"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="LCDBorder"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="BTB-pT-ape" kind="unwind" unwindAction="unwindToTableViewWithSegue:" id="HIl-z5-bK7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OdL-2L-PrL">
+                                <rect key="frame" x="35.5" y="237.5" width="304" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="304" id="01m-Hh-3ES"/>
+                                    <constraint firstAttribute="height" constant="50" id="R5F-Wy-I91"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BoldLEDBoard-7" family="Bold LED Board-7" pointSize="17"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Tame!">
+                                    <color key="titleColor" name="LCDText"/>
+                                    <color key="titleShadowColor" name="LCDLightText"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="LCDBorder"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tameBiq:" destination="Io3-rC-hpi" eventType="touchUpInside" id="t7R-0x-meg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="LCDBack"/>
+                        <constraints>
+                            <constraint firstItem="DZG-0c-Txf" firstAttribute="height" secondItem="OdL-2L-PrL" secondAttribute="height" id="4uy-9k-9iK"/>
+                            <constraint firstItem="DZG-0c-Txf" firstAttribute="centerX" secondItem="OdL-2L-PrL" secondAttribute="centerX" id="5QV-Aq-gye"/>
+                            <constraint firstItem="y5I-j2-beR" firstAttribute="top" secondItem="6NZ-5J-7qx" secondAttribute="bottom" constant="20" id="Hig-MN-gaP"/>
+                            <constraint firstItem="OdL-2L-PrL" firstAttribute="top" secondItem="y5I-j2-beR" secondAttribute="bottom" constant="20" id="NRT-Wx-nO5"/>
+                            <constraint firstItem="y5I-j2-beR" firstAttribute="leading" secondItem="SfA-1P-M9k" secondAttribute="leading" constant="20" id="QGH-jI-bGP"/>
+                            <constraint firstItem="OdL-2L-PrL" firstAttribute="centerX" secondItem="SfA-1P-M9k" secondAttribute="centerX" id="VNz-67-oVt"/>
+                            <constraint firstItem="6NZ-5J-7qx" firstAttribute="top" secondItem="SfA-1P-M9k" secondAttribute="top" constant="40" id="Wy7-cr-NaZ"/>
+                            <constraint firstItem="6NZ-5J-7qx" firstAttribute="centerX" secondItem="SfA-1P-M9k" secondAttribute="centerX" id="evT-yq-mqq"/>
+                            <constraint firstItem="DZG-0c-Txf" firstAttribute="top" secondItem="OdL-2L-PrL" secondAttribute="bottom" constant="20" id="lFJ-8c-ypd"/>
+                            <constraint firstItem="SfA-1P-M9k" firstAttribute="trailing" secondItem="y5I-j2-beR" secondAttribute="trailing" id="tuY-yP-3kK"/>
+                            <constraint firstItem="DZG-0c-Txf" firstAttribute="width" secondItem="OdL-2L-PrL" secondAttribute="width" id="wPw-Wd-LoV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SfA-1P-M9k"/>
+                    </view>
+                    <connections>
+                        <segue destination="x7u-Zw-sYH" kind="show" identifier="TamedBiq" id="6OR-UX-2bD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iSV-NA-Pf9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="BTB-pT-ape" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="97" y="126"/>
+        </scene>
+        <!--Tamed Biq View Controller-->
+        <scene sceneID="mUB-Ty-m5F">
+            <objects>
+                <viewController storyboardIdentifier="TameBiq" id="x7u-Zw-sYH" customClass="TamedBiqViewController" customModule="BiqFu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h9H-xO-Hn9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3r3-ZP-tQ9">
+                                <rect key="frame" x="130" y="60" width="115.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5jI-dJ-qz8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BoldLEDBoard-7" family="Bold LED Board-7" pointSize="30"/>
+                                <color key="textColor" name="LCDText"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" name="LCDLightText"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You successfully tamed your new Biq!" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMG-OY-RcO">
+                                <rect key="frame" x="20" y="120" width="355" height="40"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
+                                <color key="textColor" name="LCDText"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" name="LCDLightText"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYK-jf-Zxm">
+                                <rect key="frame" x="20" y="160" width="335" height="360"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MrB-g4-Ns9" customClass="AvatarView" customModule="BiqFu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="12.5" width="335" height="335"/>
+                                        <subviews>
+                                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lng-AX-cfj">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="335"/>
+                                            </sceneKitView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Lng-AX-cfj" firstAttribute="top" secondItem="MrB-g4-Ns9" secondAttribute="top" id="QVd-Ky-Auz"/>
+                                            <constraint firstAttribute="width" secondItem="MrB-g4-Ns9" secondAttribute="height" multiplier="1:1" id="bh2-se-cd8"/>
+                                            <constraint firstAttribute="bottom" secondItem="Lng-AX-cfj" secondAttribute="bottom" id="d6k-3q-yJ7"/>
+                                            <constraint firstAttribute="trailing" secondItem="Lng-AX-cfj" secondAttribute="trailing" id="jOA-9Z-C2c"/>
+                                            <constraint firstItem="Lng-AX-cfj" firstAttribute="leading" secondItem="MrB-g4-Ns9" secondAttribute="leading" id="r1K-nA-Gve"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" name="LCDBorder"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="sceneView" destination="Lng-AX-cfj" id="Ob8-zx-h8E"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="MrB-g4-Ns9" firstAttribute="centerX" secondItem="HYK-jf-Zxm" secondAttribute="centerX" id="6hS-cW-89w"/>
+                                    <constraint firstItem="MrB-g4-Ns9" firstAttribute="centerY" secondItem="HYK-jf-Zxm" secondAttribute="centerY" id="Eeu-dO-eXv"/>
+                                    <constraint firstAttribute="trailing" secondItem="MrB-g4-Ns9" secondAttribute="trailing" id="dUx-yI-rTw"/>
+                                    <constraint firstItem="MrB-g4-Ns9" firstAttribute="leading" secondItem="HYK-jf-Zxm" secondAttribute="leading" id="pzM-8l-Z1P"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nCg-5Y-Gjf">
+                                <rect key="frame" x="35.5" y="520" width="304" height="49"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STR" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4R-uq-SqG">
+                                        <rect key="frame" x="-0.5" y="-0.5" width="32" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
+                                        <color key="textColor" name="LCDText"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" name="LCDLightText"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3t-a6-IvS">
+                                        <rect key="frame" x="49.5" y="-0.5" width="32" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
+                                        <color key="textColor" name="LCDText"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" name="LCDLightText"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEX" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiv-P1-FKm">
+                                        <rect key="frame" x="-0.5" y="28" width="32" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
+                                        <color key="textColor" name="LCDText"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" name="LCDLightText"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieJ-wg-KWu">
+                                        <rect key="frame" x="49.5" y="28" width="32" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
+                                        <color key="textColor" name="LCDText"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" name="LCDLightText"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INT" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Fv-PO-olm">
+                                        <rect key="frame" x="221.5" y="-0.5" width="32" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
+                                        <color key="textColor" name="LCDText"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" name="LCDLightText"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5z-Is-8lP">
+                                        <rect key="frame" x="271.5" y="-0.5" width="32" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
+                                        <color key="textColor" name="LCDText"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" name="LCDLightText"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHA" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1iR-G3-JTG">
+                                        <rect key="frame" x="221.5" y="28" width="32" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
+                                        <color key="textColor" name="LCDText"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" name="LCDLightText"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rta-ZD-iZK">
+                                        <rect key="frame" x="271.5" y="28" width="32" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
+                                        <color key="textColor" name="LCDText"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" name="LCDLightText"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="T5z-Is-8lP" firstAttribute="trailing" secondItem="Rta-ZD-iZK" secondAttribute="trailing" id="4x1-5O-R1O"/>
+                                    <constraint firstItem="eiv-P1-FKm" firstAttribute="leading" secondItem="nCg-5Y-Gjf" secondAttribute="leading" constant="-0.66666666666665719" id="9vk-e1-wnK"/>
+                                    <constraint firstItem="T5z-Is-8lP" firstAttribute="centerY" secondItem="8Fv-PO-olm" secondAttribute="centerY" id="AMK-P5-MZk"/>
+                                    <constraint firstItem="ieJ-wg-KWu" firstAttribute="centerY" secondItem="eiv-P1-FKm" secondAttribute="centerY" id="H0E-e5-6g2"/>
+                                    <constraint firstItem="1iR-G3-JTG" firstAttribute="centerY" secondItem="eiv-P1-FKm" secondAttribute="centerY" id="HBO-Fy-WuA"/>
+                                    <constraint firstItem="a3t-a6-IvS" firstAttribute="centerY" secondItem="J4R-uq-SqG" secondAttribute="centerY" id="Spn-rg-EML"/>
+                                    <constraint firstAttribute="height" constant="49" id="UWz-dV-bBg"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rta-ZD-iZK" secondAttribute="trailing" constant="0.66666666666662877" id="XSO-fN-0rJ"/>
+                                    <constraint firstItem="ieJ-wg-KWu" firstAttribute="leading" secondItem="eiv-P1-FKm" secondAttribute="trailing" constant="18" id="ZKQ-Gd-sX9"/>
+                                    <constraint firstItem="Rta-ZD-iZK" firstAttribute="centerY" secondItem="1iR-G3-JTG" secondAttribute="centerY" id="aN6-S6-PwD"/>
+                                    <constraint firstItem="J4R-uq-SqG" firstAttribute="leading" secondItem="eiv-P1-FKm" secondAttribute="leading" id="cYG-Qd-3HY"/>
+                                    <constraint firstItem="Rta-ZD-iZK" firstAttribute="leading" secondItem="1iR-G3-JTG" secondAttribute="trailing" constant="18" id="fLI-yb-KZU"/>
+                                    <constraint firstAttribute="bottom" secondItem="eiv-P1-FKm" secondAttribute="bottom" constant="0.5" id="kSy-Y2-z8Z"/>
+                                    <constraint firstItem="8Fv-PO-olm" firstAttribute="leading" secondItem="1iR-G3-JTG" secondAttribute="leading" id="q4M-cd-N08"/>
+                                    <constraint firstItem="8Fv-PO-olm" firstAttribute="centerY" secondItem="J4R-uq-SqG" secondAttribute="centerY" id="qfl-N5-6Vr"/>
+                                    <constraint firstItem="eiv-P1-FKm" firstAttribute="top" secondItem="J4R-uq-SqG" secondAttribute="bottom" constant="8" id="sQV-0g-Xf2"/>
+                                    <constraint firstItem="a3t-a6-IvS" firstAttribute="leading" secondItem="ieJ-wg-KWu" secondAttribute="leading" id="z71-jZ-c2z"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87I-ug-Dsh">
+                                <rect key="frame" x="35.5" y="577" width="304" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="DdP-t6-zmE"/>
+                                    <constraint firstAttribute="width" constant="304" id="uAM-pR-wWB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BoldLEDBoard-7" family="Bold LED Board-7" pointSize="17"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" name="LCDText"/>
+                                    <color key="titleShadowColor" name="LCDLightText"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="LCDBorder"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="ALv-Qy-Y1n" kind="unwind" unwindAction="unwindToBiqsWithSegue:" id="uIE-QR-4vf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="LCDBack"/>
+                        <constraints>
+                            <constraint firstItem="Aip-QP-MkL" firstAttribute="bottom" secondItem="87I-ug-Dsh" secondAttribute="bottom" constant="40" id="6pz-qk-Lwz"/>
+                            <constraint firstItem="3r3-ZP-tQ9" firstAttribute="top" secondItem="Aip-QP-MkL" secondAttribute="top" constant="40" id="9X4-gd-wMi"/>
+                            <constraint firstItem="HYK-jf-Zxm" firstAttribute="leading" secondItem="Aip-QP-MkL" secondAttribute="leading" constant="20" id="Anu-re-eRa"/>
+                            <constraint firstItem="zMG-OY-RcO" firstAttribute="leading" secondItem="Aip-QP-MkL" secondAttribute="leading" constant="20" id="BTW-W6-QUG"/>
+                            <constraint firstItem="nCg-5Y-Gjf" firstAttribute="leading" secondItem="87I-ug-Dsh" secondAttribute="leading" id="BZt-vC-2vz"/>
+                            <constraint firstItem="nCg-5Y-Gjf" firstAttribute="trailing" secondItem="87I-ug-Dsh" secondAttribute="trailing" id="Ixx-Rn-ogI"/>
+                            <constraint firstItem="3r3-ZP-tQ9" firstAttribute="centerX" secondItem="Aip-QP-MkL" secondAttribute="centerX" id="Nu4-oe-wac"/>
+                            <constraint firstItem="zMG-OY-RcO" firstAttribute="trailing" secondItem="Aip-QP-MkL" secondAttribute="trailing" id="O7e-DK-h3J"/>
+                            <constraint firstItem="87I-ug-Dsh" firstAttribute="centerX" secondItem="Aip-QP-MkL" secondAttribute="centerX" id="QBv-W1-YrK"/>
+                            <constraint firstItem="HYK-jf-Zxm" firstAttribute="top" secondItem="zMG-OY-RcO" secondAttribute="bottom" id="RBu-7Y-4Ha"/>
+                            <constraint firstItem="nCg-5Y-Gjf" firstAttribute="top" secondItem="HYK-jf-Zxm" secondAttribute="bottom" id="XiX-TR-C07"/>
+                            <constraint firstItem="87I-ug-Dsh" firstAttribute="top" secondItem="nCg-5Y-Gjf" secondAttribute="bottom" constant="8" id="fcS-Ea-rwr"/>
+                            <constraint firstItem="Aip-QP-MkL" firstAttribute="trailing" secondItem="HYK-jf-Zxm" secondAttribute="trailing" constant="20" id="gl6-YK-jlY"/>
+                            <constraint firstItem="zMG-OY-RcO" firstAttribute="top" secondItem="3r3-ZP-tQ9" secondAttribute="bottom" constant="20" id="w8A-Zx-VUb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Aip-QP-MkL"/>
+                    </view>
+                    <connections>
+                        <outlet property="avatarView" destination="MrB-g4-Ns9" id="gvW-3N-aKY"/>
+                        <outlet property="chaLabel" destination="Rta-ZD-iZK" id="Prc-CL-vbW"/>
+                        <outlet property="dexLabel" destination="ieJ-wg-KWu" id="aho-57-qLc"/>
+                        <outlet property="intLabel" destination="T5z-Is-8lP" id="fjb-FR-0pj"/>
+                        <outlet property="strLabel" destination="a3t-a6-IvS" id="281-Rg-45q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Scd-kn-R4B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ALv-Qy-Y1n" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="904.79999999999995" y="124.58770614692655"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="LCDBack">
+            <color red="0.66299998760223389" green="0.69099998474121094" blue="0.60900002717971802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="LCDBorder">
+            <color red="0.38199999928474426" green="0.3880000114440918" blue="0.36000001430511475" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="LCDLightText">
+            <color red="0.57599997520446777" green="0.58499997854232788" blue="0.53299999237060547" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="LCDText">
+            <color red="0.24699999392032623" green="0.25099998712539673" blue="0.23100000619888306" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

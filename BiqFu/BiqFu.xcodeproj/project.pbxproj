@@ -29,6 +29,9 @@
 		F87080E521064FE10086255B /* IndicatorBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87080E421064FE00086255B /* IndicatorBar.swift */; };
 		F87080E7210650240086255B /* IndicatorBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = F87080E6210650240086255B /* IndicatorBar.xib */; };
 		F87080E9210661E80086255B /* BiqInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87080E8210661E80086255B /* BiqInstance.swift */; };
+		F87080EB2106B90E0086255B /* NewBiq.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F87080EA2106B90E0086255B /* NewBiq.storyboard */; };
+		F87080ED210776130086255B /* NewBicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87080EC210776130086255B /* NewBicViewController.swift */; };
+		F87080EF210776240086255B /* TamedBiqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87080EE210776240086255B /* TamedBiqViewController.swift */; };
 		F896726D20F6DA6800EF1320 /* BiqFuCodables.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F896726C20F6DA6800EF1320 /* BiqFuCodables.framework */; };
 		F896726E20F6DA6800EF1320 /* BiqFuCodables.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F896726C20F6DA6800EF1320 /* BiqFuCodables.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F896727120F6DCE400EF1320 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F896727020F6DCE400EF1320 /* GameKit.framework */; };
@@ -84,6 +87,9 @@
 		F87080E421064FE00086255B /* IndicatorBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorBar.swift; sourceTree = "<group>"; };
 		F87080E6210650240086255B /* IndicatorBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndicatorBar.xib; sourceTree = "<group>"; };
 		F87080E8210661E80086255B /* BiqInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiqInstance.swift; sourceTree = "<group>"; };
+		F87080EA2106B90E0086255B /* NewBiq.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewBiq.storyboard; sourceTree = "<group>"; };
+		F87080EC210776130086255B /* NewBicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBicViewController.swift; sourceTree = "<group>"; };
+		F87080EE210776240086255B /* TamedBiqViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamedBiqViewController.swift; sourceTree = "<group>"; };
 		F896726C20F6DA6800EF1320 /* BiqFuCodables.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BiqFuCodables.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F896727020F6DCE400EF1320 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		F896727220F6DD1B00EF1320 /* BiqFu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = BiqFu.entitlements; path = BiqFu/BiqFu.entitlements; sourceTree = "<group>"; };
@@ -132,16 +138,18 @@
 		F8AE1B7220F8025200ED52AD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F8D22CF120E71AF000249B01 /* Info.plist */,
+				F8D22CE520E71AEC00249B01 /* art.scnassets */,
+				F80BD8E720F2DA5F00150B6B /* Assets.xcassets */,
+				F8A5980920F7D4BE00314A33 /* bold_led_board-7.ttf */,
 				F8D22CE920E71AEC00249B01 /* Main.storyboard */,
 				F8D22CEE20E71AF000249B01 /* LaunchScreen.storyboard */,
 				F803EA7320F567AB00738F73 /* Biqs.storyboard */,
 				F803EA7920F568E700738F73 /* Login.storyboard */,
+				F87080EA2106B90E0086255B /* NewBiq.storyboard */,
 				F803EA7F20F68FEA00738F73 /* BiqCollectionViewCell.xib */,
 				F896727520F711DE00EF1320 /* BiqCollectionViewHeader.xib */,
 				F8AE1B7320F8044800ED52AD /* ModalDialog.xib */,
-				F8D22CE520E71AEC00249B01 /* art.scnassets */,
-				F80BD8E720F2DA5F00150B6B /* Assets.xcassets */,
-				F8A5980920F7D4BE00314A33 /* bold_led_board-7.ttf */,
 				F87080E6210650240086255B /* IndicatorBar.xib */,
 				F8C47A4620FA5C1D006AF145 /* AvatarView.xib */,
 			);
@@ -174,21 +182,22 @@
 		F8D22CE220E71AEC00249B01 /* Bicci */ = {
 			isa = PBXGroup;
 			children = (
+				F8AE1B7220F8025200ED52AD /* Resources */,
 				F896727320F6E7A300EF1320 /* AppState.swift */,
 				F8D22CE320E71AEC00249B01 /* AppDelegate.swift */,
+				F809C2322102736800879212 /* AvatarNode.swift */,
+				F8C47A4420FA5C0D006AF145 /* AvatarView.swift */,
 				F87080E8210661E80086255B /* BiqInstance.swift */,
+				F803EA7D20F68E1F00738F73 /* BiqsViewController.swift */,
+				F803EA8120F690B700738F73 /* BiqCollectionViewCell.swift */,
 				F8D22CE720E71AEC00249B01 /* TableViewController.swift */,
+				F87080EC210776130086255B /* NewBicViewController.swift */,
+				F87080EE210776240086255B /* TamedBiqViewController.swift */,
 				F803EA7120F5677700738F73 /* OpeningViewController.swift */,
 				F803EA7520F5688800738F73 /* LoginViewController.swift */,
 				F803EA7720F568D700738F73 /* CreateAccountViewController.swift */,
 				F803EA7B20F6742F00738F73 /* UIViewController+alert.swift */,
-				F803EA7D20F68E1F00738F73 /* BiqsViewController.swift */,
-				F803EA8120F690B700738F73 /* BiqCollectionViewCell.swift */,
 				F896727720F724C100EF1320 /* Extensions.swift */,
-				F8C47A4420FA5C0D006AF145 /* AvatarView.swift */,
-				F809C2322102736800879212 /* AvatarNode.swift */,
-				F8AE1B7220F8025200ED52AD /* Resources */,
-				F8D22CF120E71AF000249B01 /* Info.plist */,
 				F8AE1B7520F804F100ED52AD /* ModalDialog.swift */,
 				F87080E421064FE00086255B /* IndicatorBar.swift */,
 			);
@@ -271,6 +280,7 @@
 				F8D22CF020E71AF000249B01 /* LaunchScreen.storyboard in Resources */,
 				F80BD8E820F2DA5F00150B6B /* Assets.xcassets in Resources */,
 				F803EA8020F68FEA00738F73 /* BiqCollectionViewCell.xib in Resources */,
+				F87080EB2106B90E0086255B /* NewBiq.storyboard in Resources */,
 				F8A5980A20F7D4BE00314A33 /* bold_led_board-7.ttf in Resources */,
 				F8D22CEB20E71AEC00249B01 /* Main.storyboard in Resources */,
 				F8AE1B7420F8044800ED52AD /* ModalDialog.xib in Resources */,
@@ -297,7 +307,9 @@
 				F896727820F724C100EF1320 /* Extensions.swift in Sources */,
 				F803EA7C20F6742F00738F73 /* UIViewController+alert.swift in Sources */,
 				F803EA7220F5677700738F73 /* OpeningViewController.swift in Sources */,
+				F87080ED210776130086255B /* NewBicViewController.swift in Sources */,
 				F87080E9210661E80086255B /* BiqInstance.swift in Sources */,
+				F87080EF210776240086255B /* TamedBiqViewController.swift in Sources */,
 				F803EA7E20F68E1F00738F73 /* BiqsViewController.swift in Sources */,
 				F8D22CE420E71AEC00249B01 /* AppDelegate.swift in Sources */,
 			);
